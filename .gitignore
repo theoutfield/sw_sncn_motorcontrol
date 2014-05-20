@@ -1,0 +1,25 @@
+## ignore XDE(ecipse) files
+.metadata/
+.settings/
+
+## generic files to ignore
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+
+## build files and bins
+.build_Debug/
+.build_Release/
+bin/
+
+## XSCOPE output
+*.xmt
+
+## ignore KDE files
+.directory
+
+
+## ignore doxygen outputs
+.dox/gen
