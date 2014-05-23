@@ -195,6 +195,14 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_blocks/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_pwm/module_pwm_common}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_motor/src/new_configuraion_system/motors}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_motor/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motor/src/new_configuraion_system/motors}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_motor/src/new_configuraion_system}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motor/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motor}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_motor}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motor/src/new_configuraion_system}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.xc.compiler.input.1134324534" name="XC" superClass="com.xmos.cdt.xc.compiler.input"/>
 							</tool>
@@ -344,6 +352,14 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_blocks/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_pwm/module_pwm_common}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_motor/src/new_configuraion_system/motors}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_motor/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motor/src/new_configuraion_system/motors}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_motor/src/new_configuraion_system}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motor/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motor}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_motor}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motor/src/new_configuraion_system}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.c.compiler.input.c.678381819" name="C" superClass="com.xmos.cdt.c.compiler.input.c"/>
 							</tool>
@@ -499,6 +515,14 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_blocks/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_pwm/module_pwm_common}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_motor/src/new_configuraion_system/motors}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_motor/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motor/src/new_configuraion_system/motors}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_motor/src/new_configuraion_system}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motor/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motor}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_motor}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motor/src/new_configuraion_system}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.cxx.compiler.input.cpp.711216607" name="C++" superClass="com.xmos.cdt.cxx.compiler.input.cpp"/>
 							</tool>
@@ -704,6 +728,14 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_blocks/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_pwm/module_pwm_common}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_motor/src/new_configuraion_system/motors}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_motor/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motor/src/new_configuraion_system/motors}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_motor/src/new_configuraion_system}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motor/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motor}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_motor}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motor/src/new_configuraion_system}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.xc.compiler.input.1093278282" name="XC" superClass="com.xmos.cdt.xc.compiler.input"/>
 							</tool>
@@ -853,6 +885,14 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_blocks/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_pwm/module_pwm_common}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_motor/src/new_configuraion_system/motors}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_motor/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motor/src/new_configuraion_system/motors}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_motor/src/new_configuraion_system}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motor/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motor}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_motor}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motor/src/new_configuraion_system}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.c.compiler.input.c.785094599" name="C" superClass="com.xmos.cdt.c.compiler.input.c"/>
 							</tool>
@@ -1008,6 +1048,14 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_blocks/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_pwm/module_pwm_common}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_motor/src/new_configuraion_system/motors}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_motor/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motor/src/new_configuraion_system/motors}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_motor/src/new_configuraion_system}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motor/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motor}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_motor}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motor/src/new_configuraion_system}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.cxx.compiler.input.cpp.9459547" name="C++" superClass="com.xmos.cdt.cxx.compiler.input.cpp"/>
 							</tool>
