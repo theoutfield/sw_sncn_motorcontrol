@@ -9,7 +9,7 @@ TARGET = SOMANET-C22-Motor_control-XScope_v13
 APP_NAME = 
 
 # The USED_MODULES variable lists other module used by the application.
-USED_MODULES = module_adc module_blocks module_brushed_dc module_comm module_common \
+USED_MODULES = module_adc module_blocks module_comm module_common \
                module_commutation module_ctrl_loops module_ecat_drive module_gpio \
                module_hall module_motor module_profile module_pwm_common \
                module_pwm_symmetrical module_qei module_sm sc_sncn_ctrlproto/module_ctrlproto \
