@@ -16,7 +16,7 @@
 #include <pwm_service_inv.h>
 #include <comm_loop_server.h>
 #include <refclk.h>
-#include <xscope.h>
+#include <xscope_wrapper.h>
 #include <qei_server.h>
 #include <bldc_motor_config.h>
 #include <profile.h>

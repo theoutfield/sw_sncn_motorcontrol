@@ -18,7 +18,7 @@
 #include <adc_server_ad7949.h>
 #include <comm_loop_server.h>
 #include <refclk.h>
-#include <xscope.h>
+#include <xscope_wrapper.h>
 #include <bldc_motor_config.h>
 #include <torque_ctrl_server.h>
 #include <profile_control.h>

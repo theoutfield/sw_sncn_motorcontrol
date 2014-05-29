@@ -19,7 +19,7 @@
 #include <refclk.h>
 #include <velocity_ctrl_client.h>
 #include <velocity_ctrl_server.h>
-#include <xscope.h>
+#include <xscope_wrapper.h>
 #include <profile.h>
 #include <internal_config.h>
 #include <bldc_motor_config.h>

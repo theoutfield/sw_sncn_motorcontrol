@@ -10,7 +10,7 @@
 #include <profile_control.h>
 #include <bldc_motor_config.h>
 #include <drive_config.h>
-#include <xscope.h>
+#include <xscope_wrapper.h>
 
 void position_ctrl_unit_test(chanend c_position_ctrl, chanend c_qei, chanend c_hall)
 {
