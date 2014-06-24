@@ -21,7 +21,8 @@
 #include <position_ctrl_server.h>
 #include <torque_ctrl_server.h>
 #include <ecat_motor_drive.h>
-#include <bldc_motor_config.h>
+#include <drive_modes.h>
+#include <statemachine.h>
 #include <flash_somanet.h>
 #include <gpio_server.h>
 

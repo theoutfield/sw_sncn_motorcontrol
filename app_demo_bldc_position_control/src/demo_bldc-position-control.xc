@@ -18,13 +18,16 @@
 #include <refclk.h>
 #include <xscope_wrapper.h>
 #include <qei_server.h>
-#include <bldc_motor_config.h>
+#include <drive_modes.h>
+#include <statemachine.h>
 #include <profile.h>
 #include <position_ctrl_server.h>
-#include <drive_config.h>
+#include <drive_modes.h>
+#include <statemachine.h>
 #include <profile_control.h>
 #include <internal_config.h>
-#include "position_ctrl_client.h"
+#include <drive_modes.h>
+#include <position_ctrl_client.h>
 #include <test.h>  //Unit Testing Position control (optional)
 
 //#define ENABLE_xscope
@@ -146,7 +149,6 @@ int main(void)
 					commutation_par commutation_params;
 					init_hall_param(hall_params);
 					init_qei_param(qei_params);
-					init_commutation_param(commutation_params, hall_params, MAX_NOMINAL_SPEED); 			// initialize commutation params
 					commutation_sinusoidal(c_hall_p1,  c_qei_p1, c_signal, c_watchdog, 	\
 							c_commutation_p1, c_commutation_p2, c_commutation_p3, c_pwm_ctrl,\
 							p_ifm_esf_rstn_pwml_pwmh, p_ifm_coastn, p_ifm_ff1, p_ifm_ff2,\
@@ -159,14 +161,12 @@ int main(void)
 				/* Hall Server */
 				{
 					hall_par hall_params;
-					init_hall_param(hall_params);
 					run_hall(c_hall_p1, c_hall_p2, c_hall_p3, c_hall_p4, c_hall_p5, c_hall_p6, p_ifm_hall, hall_params); // channel priority 1,2..6
 				}
 
 				/* QEI Server */
 				{
 					qei_par qei_params;
-					init_qei_param(qei_params);
 					run_qei(c_qei_p1, c_qei_p2, c_qei_p3, c_qei_p4, c_qei_p5, c_qei_p6, p_ifm_encoder, qei_params);  	// channel priority 1,2..6
 				}
 			}

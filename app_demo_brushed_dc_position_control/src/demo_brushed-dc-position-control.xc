@@ -16,17 +16,20 @@
 #include <qei_server.h>
 #include <pwm_service_inv.h>
 #include <brushed_dc_server.h>
-#include "brushed_dc_client.h"
+#include <brushed_dc_client.h>
 #include <refclk.h>
 #include <velocity_ctrl_client.h>
 #include <velocity_ctrl_server.h>
 #include <xscope_wrapper.h>
 #include <internal_config.h>
-#include <bldc_motor_config.h>
-#include <drive_config.h>
+#include <drive_modes.h>
+#include <statemachine.h>
+#include <drive_modes.h>
+#include <statemachine.h>
 #include <profile_control.h>
 #include <position_ctrl_server.h>
-#include "position_ctrl_client.h"
+#include <drive_modes.h>
+#include <position_ctrl_client.h>
 #include <qei_client.h>
 #include <profile.h>
 //#define ENABLE_xscope
@@ -145,7 +148,6 @@ int main(void)
 				/* Hall Server */
 				{
 					hall_par hall_params;
-					init_hall_param(hall_params);
 					run_hall(c_hall_p1, c_hall_p2, c_hall_p3, c_hall_p4, c_hall_p5, c_hall_p6, p_ifm_hall, hall_params); // channel priority 1,2..5
 				}
 
@@ -153,7 +155,6 @@ int main(void)
 
 				{
 					qei_par qei_params;
-					init_qei_param(qei_params);
 					run_qei(c_qei_p1, c_qei_p2, c_qei_p3, c_qei_p4, c_qei_p5, c_qei_p6, p_ifm_encoder, qei_params);  		 // channel priority 1,2..5
 				}
 

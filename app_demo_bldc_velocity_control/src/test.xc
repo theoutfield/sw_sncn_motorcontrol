@@ -1,14 +1,16 @@
-#include "test.h"
+#include <test.h>
 #include <xs1.h>
 #include <platform.h>
-#include "refclk.h"
+#include <refclk.h>
 #include <profile.h>
-#include "position_ctrl_client.h"
+#include <drive_modes.h>
+#include <position_ctrl_client.h>
 #include <torque_ctrl_client.h>
 #include <velocity_ctrl_client.h>
-#include "comm_loop_client.h"
+#include <comm_loop_client.h>
 #include <profile_control.h>
-#include <bldc_motor_config.h>
+#include <drive_modes.h>
+#include <statemachine.h>
 
 
 void velocity_ctrl_unit_test(chanend c_velocity_ctrl, chanend c_qei, chanend c_hall)

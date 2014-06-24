@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include "test.h"
+#include <test.h>
 
 float f1;
 

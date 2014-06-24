@@ -41,11 +41,11 @@
 
 #include <ctrlproto_m.h>
 #include <ecrt.h>
-#include "ethercat_setup.h"
+#include <ethercat_setup.h>
 #include <stdio.h>
 #include <stdbool.h>
-#include "profile.h"
-#include "drive_function.h"
+#include <profile.h>
+#include <drive_function.h>
 #include <motor_define.h>
 #include <sys/time.h>
 #include <time.h>
