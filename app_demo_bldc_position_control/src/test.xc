@@ -13,6 +13,8 @@
 #include <drive_modes.h>
 #include <statemachine.h>
 #include <xscope_wrapper.h>
+#include <hall_server.h>
+#include <qei_server.h>
 
 void position_ctrl_unit_test(chanend c_position_ctrl, chanend c_qei, chanend c_hall)
 {
@@ -158,12 +160,12 @@ void enable_motor_test(chanend c_commutation)
 		if(d.shutdown == 1)
 		{
 			set_commutation_sinusoidal(c_commutation, 0);
-			disable_motor(c_commutation);
+			//disable_motor(c_commutation);
 			wait_ms(30, 1, t);
 		}
 		else if(d.shutdown == 0)
 		{
-			enable_motor(c_commutation);
+			//enable_motor(c_commutation);
 			wait_ms(30, 1, t);
 			i = 0;
 			while(1)

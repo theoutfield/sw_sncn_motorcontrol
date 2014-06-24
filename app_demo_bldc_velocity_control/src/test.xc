@@ -3,7 +3,6 @@
 #include <platform.h>
 #include <refclk.h>
 #include <profile.h>
-#include <drive_modes.h>
 #include <position_ctrl_client.h>
 #include <torque_ctrl_client.h>
 #include <velocity_ctrl_client.h>
@@ -101,7 +100,7 @@ void enable_motor_test(chanend c_commutation)
 		if(d.shutdown == 1)
 		{
 			set_commutation_sinusoidal(c_commutation, 0);
-			disable_motor(c_commutation);
+			//disable_motor(c_commutation);
 			wait_ms(30, 1, t);
 		}
 		else if(d.shutdown == 0)
