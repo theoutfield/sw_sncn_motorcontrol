@@ -9,10 +9,7 @@ TARGET = SOMANET-C22-Motor_control-XScope_v13
 APP_NAME = 
 
 # The USED_MODULES variable lists other module used by the application.
-USED_MODULES = module_adc module_blocks module_brushed_dc module_motorcontrol_common \
-               module_commutation module_ctrl_loops module_hall module_motor \
-               module_profile module_pwm_common module_pwm_symmetrical module_qei \
-               module_sm module_nodeconfig
+USED_MODULES = module_adc module_blocks module_brushed_dc module_motorcontrol_common module_commutation module_ctrl_loops module_hall module_motor module_profile module_pwm_common module_pwm_symmetrical module_qei module_sm module_nodeconfig
 
 # The flags passed to xcc when building the application
 # You can also set the following to override flags for a particular language:
