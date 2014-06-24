@@ -95,7 +95,6 @@ It captures current values in the motor phases. Read more at [module_adc][module
 
 	init_hall_param(hall_params); //Initialization
 	init_qei_param(qei_params);
-	init_commutation_param(commutation_params, hall_params, MAX_NOMINAL_SPEED); 
 
 	commutation_sinusoidal(c_hall_p1,  c_qei_p2, c_signal, c_watchdog, c_commutation_p1,
 				c_commutation_p2, c_commutation_p3, c_pwm_ctrl, hall_params,
@@ -107,7 +106,6 @@ Responsible for proper BLDC motor drive. Read more at [module_commutation][modul
 - **Thread**: Hall Server
 ```
 	hall_par hall_params;
-	init_hall_param(hall_params);
 	run_hall(c_hall_p1, c_hall_p2, c_hall_p3, c_hall_p4, c_hall_p5,
 			p_ifm_hall, hall_params); //Channel priority 1,2..5
 ```
@@ -116,7 +114,6 @@ To obtain information about motor position for position control loop, its use is
 - **Thread**: QEI Server
 ```
 	qei_par qei_params;
-	init_qei_param(qei_params);
 	run_qei(c_qei_p1, c_qei_p2, c_qei_p3, c_qei_p4, c_qei_p5,
 			p_ifm_encoder, qei_params);  	// channel priority 1,2..5
 ```

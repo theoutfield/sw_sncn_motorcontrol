@@ -8,7 +8,7 @@ must be running test_ethercat-motorctrl-mode from sc_sncn_motorctrl_sin before t
 application runs.
 
 In Homing mode we provide homing based on switches (positive switch/ negative switch). If 
-configured homing based for positive switch: the node hunts for home switch in the positve 
+configured homing based for positive switch: the node hunts for home switch in the positive 
 direction. Once the home switch is found the node resets the position counter with the offset 
 found.
 
