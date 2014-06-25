@@ -1,10 +1,10 @@
 
 /**
- * \file common_config.h
- * \brief common internal configurations
- * \author Pavan Kanajar <pkanajar@synapticon.com>
- * \version 1.0
- * \date 10/04/2014
+ * @file common_config.h
+ * @brief common internal configurations
+ * @author Pavan Kanajar <pkanajar@synapticon.com>
+ * @version 1.0
+ * @date 10/04/2014
  */
 /*
  * Copyright (c) 2014, Synapticon GmbH

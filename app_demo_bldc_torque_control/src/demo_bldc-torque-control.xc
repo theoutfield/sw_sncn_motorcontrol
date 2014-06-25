@@ -1,11 +1,11 @@
 
 /**
- * \file test_torque-ctrl.xc
- * \brief Test illustrates usage of profile torque control
- * \author Pavan Kanajar <pkanajar@synapticon.com>
- * \author Martin Schwarz <mschwarz@synapticon.com>
- * \version 1.0
- * \date 10/04/2014
+ * @file test_torque-ctrl.xc
+ * @brief Test illustrates usage of profile torque control
+ * @author Pavan Kanajar <pkanajar@synapticon.com>
+ * @author Martin Schwarz <mschwarz@synapticon.com>
+ * @version 1.0
+ * @date 10/04/2014
  */
 
 #include <xs1.h>

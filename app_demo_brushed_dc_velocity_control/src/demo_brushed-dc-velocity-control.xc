@@ -1,11 +1,11 @@
 
 /**
- * \file
- * \brief Test illustrates usage of profile velocity control for brushed dc motor
- * \author Pavan Kanajar <pkanajar@synapticon.com>
- * \author Martin Schwarz <mschwarz@synapticon.com>
- * \version 0.9beta
- * \date 10/04/2014
+ * @file
+ * @brief Test illustrates usage of profile velocity control for brushed dc motor
+ * @author Pavan Kanajar <pkanajar@synapticon.com>
+ * @author Martin Schwarz <mschwarz@synapticon.com>
+ * @version 0.9beta
+ * @date 10/04/2014
  */
 
 #include <xs1.h>

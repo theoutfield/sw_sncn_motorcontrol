@@ -1,11 +1,11 @@
 
 /**
- * \file main.c
- * \brief Example Master App for Profile Torque (on PC)
- * \author Pavan Kanajar <pkanajar@synapticon.com>
- * \author Christian Holl <choll@synapticon.com>
- * \version 1.0
- * \date 10/04/2014
+ * @file main.c
+ * @brief Example Master App for Profile Torque (on PC)
+ * @author Pavan Kanajar <pkanajar@synapticon.com>
+ * @author Christian Holl <choll@synapticon.com>
+ * @version 1.0
+ * @date 10/04/2014
  */
 /*
  * Copyright (c) 2014, Synapticon GmbH

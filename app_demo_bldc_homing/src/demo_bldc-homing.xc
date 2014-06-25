@@ -1,11 +1,11 @@
 
 /**
- * \file test_homing-ctrl.xc
- * \brief Test illustrates implementation of homing method with a positive limit switch and a home switch
- * \author Pavan Kanajar <pkanajar@synapticon.com>
- * \author Martin Schwarz <mschwarz@synapticon.com>
- * \version 1.0
- * \date 10/04/2014
+ * @file test_homing-ctrl.xc
+ * @brief Test illustrates implementation of homing method with a positive limit switch and a home switch
+ * @author Pavan Kanajar <pkanajar@synapticon.com>
+ * @author Martin Schwarz <mschwarz@synapticon.com>
+ * @version 1.0
+ * @date 10/04/2014
  */
 
 

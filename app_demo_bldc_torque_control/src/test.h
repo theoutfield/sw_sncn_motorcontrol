@@ -1,7 +1,7 @@
 
 /**
  *
- * \file test.xc
+ * @file test.xc
  *	 Unit Testing Position control.
  *
  */

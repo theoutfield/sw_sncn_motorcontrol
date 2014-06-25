@@ -1,10 +1,10 @@
 
 /**
- * \file nodeconfig.h
- * \brief Node config file
- * \author Martin Schwarz <schwarz@synapticon.co>
- * \version 1.0
- * \date 10/04/2014
+ * @file nodeconfig.h
+ * @brief Node config file
+ * @author Martin Schwarz <schwarz@synapticon.co>
+ * @version 1.0
+ * @date 10/04/2014
  */
 /*
  * Copyright (c) 2014, Synapticon GbH
