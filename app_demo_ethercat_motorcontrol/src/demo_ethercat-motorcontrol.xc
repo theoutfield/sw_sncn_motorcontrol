@@ -84,7 +84,7 @@ int main(void)
 		/* Ethercat Motor Drive Loop */
 		on tile[1] :
 		{
-			ecat_motor_drive(pdo_out, pdo_in, coe_out, c_flash_data, c_signal,\
+			ecat_motor_drive(pdo_out, pdo_in, coe_out, c_signal,\
 			        c_hall_p5, c_qei_p5, c_torque_ctrl, c_velocity_ctrl,\
 			        c_position_ctrl, c_gpio_p1);
 		}
