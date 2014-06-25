@@ -13,7 +13,7 @@ Key Features
 -  Profile Position Control
 -  Profile Velocity Control
 -  Profile Torque Control
--  Ethercat Operating Modes
+-  EtherCAT Operating Modes
 -  Support QEI sensor with Index/ no Index
 -  Support Hall sensor
 -  Support external Analog sensor
