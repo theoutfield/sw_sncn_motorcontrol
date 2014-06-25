@@ -1,11 +1,8 @@
-
 /**
  * @file test_ethercat-mode.xc
  * @brief Test illustrates usage of Motor Control with Ethercat
  * @author Pavan Kanajar <pkanajar@synapticon.com>
  * @author Martin Schwarz <mschwarz@synapticon.com>
- * @version 1.0
- * @date 10/04/2014
  */
 
 #include <xs1.h>
