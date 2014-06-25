@@ -30,6 +30,7 @@
 #include <qei_client.h>
 #include <gpio_server.h>
 #include <gpio_client.h>
+#include <bldc_motor_init.h>
 
 #define COM_TILE 0
 #define IFM_TILE 3

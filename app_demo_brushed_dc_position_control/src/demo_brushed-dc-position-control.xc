@@ -32,6 +32,7 @@
 #include <position_ctrl_client.h>
 #include <qei_client.h>
 #include <profile.h>
+#include <bldc_motor_config.h>
 //#define ENABLE_xscope
 
 #define IFM_TILE 3

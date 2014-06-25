@@ -10,6 +10,8 @@
 #include <profile_control.h>
 #include <drive_modes.h>
 #include <statemachine.h>
+#include <print.h>
+#include <bldc_motor_config.h>
 
 
 void torque_ctrl_unit_test(chanend c_torque_ctrl, chanend c_qei, chanend c_hall)

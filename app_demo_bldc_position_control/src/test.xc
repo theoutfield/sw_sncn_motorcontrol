@@ -15,6 +15,8 @@
 #include <xscope_wrapper.h>
 #include <hall_server.h>
 #include <qei_server.h>
+#include <print.h>
+#include <bldc_motor_config.h>
 
 void position_ctrl_unit_test(chanend c_position_ctrl, chanend c_qei, chanend c_hall)
 {

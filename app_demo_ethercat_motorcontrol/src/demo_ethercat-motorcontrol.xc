@@ -25,6 +25,8 @@
 #include <statemachine.h>
 #include <flash_somanet.h>
 #include <gpio_server.h>
+#include <comm.h>
+#include <bldc_motor_config.h>
 
 #define COM_TILE    0
 #define IFM_TILE    3

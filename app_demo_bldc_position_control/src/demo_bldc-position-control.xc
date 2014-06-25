@@ -28,6 +28,7 @@
 #include <internal_config.h>
 #include <drive_modes.h>
 #include <position_ctrl_client.h>
+#include <bldc_motor_init.h>
 #include <test.h>  //Unit Testing Position control (optional)
 
 //#define ENABLE_xscope

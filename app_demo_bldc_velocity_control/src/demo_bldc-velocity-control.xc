@@ -29,6 +29,8 @@
 #include <profile_control.h>
 #include <test.h>
 #include <qei_client.h>
+#include <bldc_motor_config.h>
+#include <bldc_motor_init.h>
 
 //#define ENABLE_xscope_main
 #define COM_TILE 0
