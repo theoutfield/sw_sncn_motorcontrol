@@ -29,6 +29,7 @@
 #include <profile_control.h>
 #include <qei_client.h>
 #include <bldc_motor_config.h>
+#include <watchdog.h>
 //#define ENABLE_xscope
 
 #define IFM_TILE 3
