@@ -13,7 +13,7 @@
 #include <qei_server.h>
 #include <pwm_service_inv.h>
 #include <adc_server_ad7949.h>
-#include <comm_loop_server.h>
+#include <commutation_server.h>
 #include <refclk.h>
 #include <xscope_wrapper.h>
 #include <drive_modes.h>

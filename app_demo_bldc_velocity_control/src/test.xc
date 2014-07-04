@@ -6,7 +6,7 @@
 #include <position_ctrl_client.h>
 #include <torque_ctrl_client.h>
 #include <velocity_ctrl_client.h>
-#include <comm_loop_client.h>
+#include <commutation_client.h>
 #include <profile_control.h>
 #include <drive_modes.h>
 #include <statemachine.h>

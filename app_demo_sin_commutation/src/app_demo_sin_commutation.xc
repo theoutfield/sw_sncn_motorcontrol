@@ -8,7 +8,7 @@
 #include <ioports.h>
 #include <hall_server.h>
 #include <pwm_service_inv.h>
-#include <comm_loop_server.h>
+#include <commutation_server.h>
 #include <refclk.h>
 #include <drive_modes.h>
 #include <statemachine.h>
