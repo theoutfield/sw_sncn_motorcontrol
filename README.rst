@@ -1,11 +1,6 @@
 SOMANET Motor Control Software Package
 ======================================
 
-.. figure:: https://s3-eu-west-1.amazonaws.com/synapticon-resources/images/logos/synapticon_fullname_blackoverwhite_280x48.png
-   :align: center
-   :alt: SYNAPTICON
-
-   SYNAPTICON
 Key Features
 ------------
 
@@ -35,7 +30,7 @@ Required software (dependencies)
 -  `sc\_somanet-base <https://github.com/synapticon/sc_somanet-base>`_
 -  `sc\_pwm <https://github.com/synapticon/sc_pwm>`_
 -  `sc\_sncn\_ethercat <https://github.com/synapticon/sc_sncn_ethercat>`_
-   (only if using Ethercat Operating Modes)
+   (only if using EtherCAT Operating Modes)
 
 Changelog
 ---------
