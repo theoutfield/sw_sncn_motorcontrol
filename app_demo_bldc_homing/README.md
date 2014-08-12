@@ -138,7 +138,7 @@ A watchdog server is used to monitor IFM_TILE and disables motor in case of emer
 
 More information about GPIO Server/ Client can be found at [module_gpio][module_gpio] documentation.
 
-Other dependencies: [module_common][module_common] [module_profile][module_profile] [module_sm][module_sm] [module_nodeconfig][module_nodeconfig]@[sc_somanet-base][sc_somanet-base]
+Other dependencies: [module_common][module_common] [module_profile][module_profile] [module_statemachine][module_statemachine] [module_nodeconfig][module_nodeconfig]@[sc_somanet-base][sc_somanet-base]
 
 **See also**:
 
@@ -159,7 +159,7 @@ Other dependencies: [module_common][module_common] [module_profile][module_profi
 [module_commutation]: https://github.com/synapticon/sc_sncn_motorctrl_sin/tree/master/module_commutation
 [module_gpio]: https://github.com/synapticon/sc_sncn_motorctrl_sin/tree/master/module_gpio
 [module_common]: https://github.com/synapticon/sc_sncn_motorctrl_sin/tree/master/module_common
-[module_sm]: https://github.com/synapticon/sc_sncn_motorctrl_sin/tree/master/module_sm
+[module_statemachine]: https://github.com/synapticon/sc_sncn_motorctrl_sin/tree/master/module_statemachine
 [module_homing]: https://github.com/synapticon/sc_sncn_motorctrl_sin/tree/master/module_homing
 [module_profile]:https://github.com/synapticon/sc_sncn_motorctrl_sin/tree/master/module_profile
 

@@ -118,7 +118,7 @@ A watchdog server is used to monitor IFM_TILE and disables motor in case of emer
 
 More information about Position Control Server/Client can be found at [module_ctrl_loops][module_ctrl_loops] documentation.
 
-Other dependencies: [module_nodeconfig][module_nodeconfig]@[sc_somanet-base][sc_somanet-base] [module_blocks][module_blocks] [module_common][module_common] [module_sm][module_sm] 
+Other dependencies: [module_nodeconfig][module_nodeconfig]@[sc_somanet-base][sc_somanet-base] [module_blocks][module_blocks] [module_common][module_common] [module_statemachine][module_statemachine] 
 
 **See also**:
 
@@ -139,7 +139,7 @@ Other dependencies: [module_nodeconfig][module_nodeconfig]@[sc_somanet-base][sc_
 [module_commutation]: https://github.com/synapticon/sc_sncn_motorctrl_sin/tree/master/module_commutation
 [module_gpio]: https://github.com/synapticon/sc_sncn_motorctrl_sin/tree/master/module_gpio
 [module_common]: https://github.com/synapticon/sc_sncn_motorctrl_sin/tree/master/module_common
-[module_sm]: https://github.com/synapticon/sc_sncn_motorctrl_sin/tree/master/module_sm
+[module_statemachine]: https://github.com/synapticon/sc_sncn_motorctrl_sin/tree/master/module_statemachine
 [module_homing]: https://github.com/synapticon/sc_sncn_motorctrl_sin/tree/master/module_homing
 [module_profile]:https://github.com/synapticon/sc_sncn_motorctrl_sin/tree/master/module_profile
 

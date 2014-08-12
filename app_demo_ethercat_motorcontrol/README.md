@@ -194,7 +194,7 @@ It access the GPIO ports at the IFM module. See more at [module_gpio][module_gpi
 
 More information about Server/Client Control can be found on [module_ctrl_loops][module_ctrl_loops]. And more information about motor control over EtherCAT on [module_ecat_drive][module_ecat_drive].
 
-Other dependencies: [module_comm][module_comm] [module_common][module_common] [module_sm][module_sm] [module_ctrlproto][module_ctrlproto]@[sc_sncn_ctrlproto][sc_sncn_ctrlproto] [module_nodeconfig][module_nodeconfig]@[sc_somanet-base][sc_somanet-base]
+Other dependencies: [module_comm][module_comm] [module_common][module_common] [module_statemachine][module_statemachine] [module_ctrlproto][module_ctrlproto]@[sc_sncn_ctrlproto][sc_sncn_ctrlproto] [module_nodeconfig][module_nodeconfig]@[sc_somanet-base][sc_somanet-base]
 
 See also:
 
@@ -211,7 +211,7 @@ See also:
 [module_commutation]: https://github.com/synapticon/sc_sncn_motorctrl_sin/tree/master/module_commutation
 [module_gpio]: https://github.com/synapticon/sc_sncn_motorctrl_sin/tree/master/module_gpio
 [module_common]: https://github.com/synapticon/sc_sncn_motorctrl_sin/tree/master/module_common
-[module_sm]: https://github.com/synapticon/sc_sncn_motorctrl_sin/tree/master/module_sm
+[module_statemachine]: https://github.com/synapticon/sc_sncn_motorctrl_sin/tree/master/module_statemachine
 [module_comm]: https://github.com/synapticon/sc_sncn_motorctrl_sin/tree/master/module_comm
 
 [sc_sncn_ethercat]:https://github.com/synapticon/sc_sncn_ethercat

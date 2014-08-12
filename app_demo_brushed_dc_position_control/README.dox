@@ -28,7 +28,7 @@ More information about Position Control Server/Client can be found under module_
 
 Dependencies: module_adc module_blocks module_brushed_dc module_common module_commutation 
 module_ctrl_loops module_hall module_profile module_pwm_symmetrical 
-module_qei module_sm sc_somanet-base/module_nodeconfig
+module_qei module_statemachine sc_somanet-base/module_nodeconfig
 
 Note: The motor configuration must be defined in config/motor/bldc_motor_config.h 
 
