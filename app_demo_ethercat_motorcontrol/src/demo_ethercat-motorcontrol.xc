@@ -24,6 +24,7 @@
 #include <gpio_server.h>
 #include <comm.h>
 #include <bldc_motor_config.h>
+#include <ethercat.h>
 
 #define COM_TILE    0
 #define IFM_TILE    3
@@ -55,7 +56,7 @@ int main(void)
 	chan foe_out; 															// File from consumer to module_ethercat
 	chan pdo_in;
 	chan pdo_out;
-	chan c_nodes[1], c_flash_data, c_sig_1;                                 // Firmware channels
+	chan c_nodes[1], c_flash_data;                                 // Firmware channels
 
 	par
 	{
@@ -75,7 +76,7 @@ int main(void)
 		on tile[COM_TILE] :
 		{
 			firmware_update_loop(p_spi_flash, foe_out, foe_in, c_flash_data,\
-                    c_nodes, c_sig_1);
+                    c_nodes, null);
 		}
 
 		/* Ethercat Motor Drive Loop */
@@ -159,7 +160,6 @@ int main(void)
 					hall_par hall_params;
 					qei_par qei_params;
 					commutation_par commutation_params;
-					commutation_init_ecat(c_signal, hall_params, qei_params, commutation_params);
 					commutation_sinusoidal(c_hall_p1,  c_qei_p1, c_signal, c_watchdog,\
 						c_commutation_p1, c_commutation_p2, c_commutation_p3, c_pwm_ctrl,\
 						p_ifm_esf_rstn_pwml_pwmh, p_ifm_coastn, p_ifm_ff1, p_ifm_ff2,\
