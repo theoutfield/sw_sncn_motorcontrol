@@ -14,7 +14,7 @@
 #include <statemachine.h>
 #include <internal_config.h>
 #include <bldc_motor_config.h>
-#define IFM_TILE 3
+
 on tile[IFM_TILE]:clock clk_adc = XS1_CLKBLK_1;
 on tile[IFM_TILE]:clock clk_pwm = XS1_CLKBLK_REF;
 

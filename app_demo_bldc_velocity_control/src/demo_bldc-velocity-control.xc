@@ -30,8 +30,6 @@
 #include <bldc_motor_init.h>
 
 //#define ENABLE_xscope_main
-#define COM_TILE 0
-#define IFM_TILE 3
 
 on stdcore[IFM_TILE]: clock clk_adc = XS1_CLKBLK_1;
 on stdcore[IFM_TILE]: clock clk_pwm = XS1_CLKBLK_REF;
@@ -109,7 +107,7 @@ int main(void)
 		}
 
 		/************************************************************
-		 * IFM_CORE
+		 * IFM_TILE
 		 ************************************************************/
 		on tile[IFM_TILE]:
 		{

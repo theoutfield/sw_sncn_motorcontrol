@@ -28,9 +28,6 @@
 #include <gpio_client.h>
 #include <bldc_motor_init.h>
 
-#define COM_TILE 0
-#define IFM_TILE 3
-
 on tile[IFM_TILE]: clock clk_adc = XS1_CLKBLK_1;
 on tile[IFM_TILE]: clock clk_pwm = XS1_CLKBLK_REF;
 

@@ -1,4 +1,4 @@
-Ethercat Mode Demo
+EtherCAT Mode Demo
 ======================
 ![SYNAPTICON](https://s3-eu-west-1.amazonaws.com/synapticon-resources/images/logos/synapticon_fullname_blackoverwhite_280x48.png)
 
@@ -48,7 +48,7 @@ This example must be run..
 - [How to configure your motors][how_to_configure_motors]
 
 ###COM_TILE 
-This tile (0 by default) runs threads responsible for handling communication over EtherCAT. They need to access the Communication Module (COM), just a tile that provides access to the COM ports can run these functions.
+This tile runs threads responsible for handling communication over EtherCAT. They need to access the Communication Module (COM), just a tile that provides access to the COM ports can run these functions.
 ```
     on stdcore[COM_TILE] :
 ```
@@ -62,7 +62,7 @@ This tile (0 by default) runs threads responsible for handling communication ove
 Ethercat communication handler loop. Read more at [module_ethercat][module_ethercat] at [EtherCAT software component][sc_sncn_ethercat].
 
 ###TILE_ONE 
-This tile (1 by default) executes a communication bridge between RX EtherCAT and motor drive. Since these functions do not require any port access, any free TILE could run them.
+This tile (only available on SOMANET Core C22) executes a communication bridge between RX EtherCAT and motor drive. Since these functions do not require any port access, any free TILE could run them.
 ```
 	on stdcore[TILE_ONE]:
 ```
@@ -74,7 +74,7 @@ This tile (1 by default) executes a communication bridge between RX EtherCAT and
 It forms a communication bridge between EtherCAT and motor drive. Read more at [module_ecat_drive][module_ecat_drive].
 
 ###TILE_TWO
-This tile (1 by default) will execute the different mode control loops. Since these functions do not require any port access, any free TILE could run them.
+This tile (only available on SOMANET Core C22) will execute the different mode control loops. Since these functions do not require any port access, any free TILE could run them.
 ```
 	on stdcore[TILE_TWO]:
 ```
@@ -129,9 +129,9 @@ Read back actual velocity of the motor. Read more at [module_ctrl_loops][module_
 Read back actual torque of the motor. Read more at [module_ctrl_loops][module_ctrl_loops].
 
 ###IFM_TILE 
-This tile (3 by default) executes the server side functions, controlling the interfaces. These functions need access to the Interface Module (IFM), just the tile that provides access to the IFM ports can run these functions.  
+This tile executes the server side functions, controlling the interfaces. These functions need access to the Interface Module (IFM), just the tile that provides access to the IFM ports can run these functions.  
 ``` 
-    on stdcore[IFM_CORE]: 
+    on stdcore[IFM_TILE]: 
 ```                   
 We need to run this threads over IFM_TILE since this is the only tile accessing the interface module (IFM). And these threads, responsible for motor control, require for this access.
 
