@@ -1,11 +1,11 @@
-/* PLEASE REPLACE "CORE_BOARD_REQUIRED" AND "IMF_BOARD_REQUIRED" WIT A APPROPRIATE BOARD SUPPORT FILE FROM module_board-support */
+/* PLEASE REPLACE "CORE_BOARD_REQUIRED" AND "IFM_BOARD_REQUIRED" WIT A APPROPRIATE BOARD SUPPORT FILE FROM module_board-support */
 /* Examples:
     #include <CORE_C22-rev-a.inc>
     #include <IFM_DC100-rev-b.inc>
 */
 
 #include <CORE_BOARD_REQUIRED>
-#include <IMF_BOARD_REQUIRED>
+#include <IFM_BOARD_REQUIRED>
 
 /**
  * @brief Test illustrates usage of module_commutation
