@@ -7,7 +7,6 @@
 
 #include <ctrlproto_m.h>
 #include <ecrt.h>
-#include <ethercat_setup.h>
 #include <stdio.h>
 #include <stdbool.h>
 #include <profile.h>
@@ -15,7 +14,7 @@
 #include <motor_define.h>
 #include <sys/time.h>
 #include <time.h>
-
+#include "ethercat_setup.h"
 
 int main()
 {
@@ -32,7 +31,7 @@ int main()
 	init_master(&master_setup, slv_handles, TOTAL_NUM_OF_SLAVES);
 
 	/* Initialize all connected nodes with Mandatory Motor Configurations (specified under config/motor/)*/
-	init_nodes(&master_setup, slv_handles, TOTAL_NUM_OF_SLAVES, sdo_update);
+	init_nodes(&master_setup, slv_handles, TOTAL_NUM_OF_SLAVES);
 
 	/* Initialize torque parameters */
 	initialize_torque(slave_number, slv_handles);
