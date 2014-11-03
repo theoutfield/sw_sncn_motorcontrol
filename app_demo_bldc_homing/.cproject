@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+<?fileVersion 4.0.0?>
+
+<cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
 	<storageModule moduleId="org.eclipse.cdt.core.settings">
 		<cconfiguration id="com.xmos.cdt.toolchain.368931326">
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.xmos.cdt.toolchain.368931326" moduleId="org.eclipse.cdt.core.settings" name="Debug">
 				<externalSettings/>
 				<extensions>
+					<extension id="com.xmos.cdt.core.XEBinaryParser" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="com.xmos.cdt.core.XdeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="com.xmos.cdt.core.XEBinaryParser" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="scannerConfiguration">
@@ -207,6 +209,54 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_motor}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motor/src/motors}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_motor/src/motors}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_profile/profile_position_mode}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_pwm_symmetrical/src/common}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_hall/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ctrl_loops/velocity}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_commutation}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_profile/profile_velocity_mode}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motorcontrol_common/predriver}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_commutation/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_commutation/doc/images}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_profile/quick_stop_mode}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_pwm_symmetrical/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_hall/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_statemachine/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_qei/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_qei/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_xscope-wrapper/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ctrl_loops/position}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_profile}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motorcontrol_common}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks/src/util}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_statemachine/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motorcontrol_common/delay}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_statemachine/doc/images}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_statemachine/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_adc/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_profile/profile_ctrl}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks/src/control_blocks/watchdog}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ctrl_loops/torque}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_qei/doc/images}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_commutation/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_gpio/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_statemachine}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_qei}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks/src/control_blocks}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/targets}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motorcontrol_common/pwm}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks/src/filter_blocks}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_profile/profile_linear_mode}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ctrl_loops}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_hall}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_hall/doc/images}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_adc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_gpio}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motorcontrol_common/include}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.xc.compiler.input.1569867149" name="XC" superClass="com.xmos.cdt.xc.compiler.input"/>
 							</tool>
@@ -368,6 +418,54 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_motor}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motor/src/motors}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_motor/src/motors}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_profile/profile_position_mode}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_pwm_symmetrical/src/common}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_hall/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ctrl_loops/velocity}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_commutation}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_profile/profile_velocity_mode}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motorcontrol_common/predriver}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_commutation/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_commutation/doc/images}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_profile/quick_stop_mode}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_pwm_symmetrical/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_hall/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_statemachine/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_qei/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_qei/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_xscope-wrapper/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ctrl_loops/position}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_profile}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motorcontrol_common}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks/src/util}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_statemachine/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motorcontrol_common/delay}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_statemachine/doc/images}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_statemachine/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_adc/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_profile/profile_ctrl}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks/src/control_blocks/watchdog}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ctrl_loops/torque}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_qei/doc/images}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_commutation/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_gpio/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_statemachine}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_qei}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks/src/control_blocks}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/targets}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motorcontrol_common/pwm}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks/src/filter_blocks}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_profile/profile_linear_mode}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ctrl_loops}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_hall}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_hall/doc/images}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_adc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_gpio}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motorcontrol_common/include}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.c.compiler.input.c.1894674099" name="C" superClass="com.xmos.cdt.c.compiler.input.c"/>
 							</tool>
@@ -535,6 +633,54 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_motor}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motor/src/motors}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_motor/src/motors}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_profile/profile_position_mode}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_pwm_symmetrical/src/common}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_hall/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ctrl_loops/velocity}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_commutation}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_profile/profile_velocity_mode}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motorcontrol_common/predriver}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_commutation/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_commutation/doc/images}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_profile/quick_stop_mode}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_pwm_symmetrical/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_hall/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_statemachine/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_qei/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_qei/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_xscope-wrapper/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ctrl_loops/position}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_profile}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motorcontrol_common}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks/src/util}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_statemachine/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motorcontrol_common/delay}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_statemachine/doc/images}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_statemachine/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_adc/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_profile/profile_ctrl}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks/src/control_blocks/watchdog}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ctrl_loops/torque}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_qei/doc/images}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_commutation/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_gpio/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_statemachine}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_qei}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks/src/control_blocks}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/targets}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motorcontrol_common/pwm}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks/src/filter_blocks}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_profile/profile_linear_mode}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ctrl_loops}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_hall}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_hall/doc/images}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_adc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_gpio}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motorcontrol_common/include}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.cxx.compiler.input.cpp.1472724888" name="C++" superClass="com.xmos.cdt.cxx.compiler.input.cpp"/>
 							</tool>
@@ -552,9 +698,9 @@
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.xmos.cdt.toolchain.1205048196" moduleId="org.eclipse.cdt.core.settings" name="Release">
 				<externalSettings/>
 				<extensions>
+					<extension id="com.xmos.cdt.core.XEBinaryParser" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="com.xmos.cdt.core.XdeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="com.xmos.cdt.core.XEBinaryParser" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="scannerConfiguration">
@@ -753,6 +899,54 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_motor}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motor/src/motors}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_motor/src/motors}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_profile/profile_position_mode}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_pwm_symmetrical/src/common}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_hall/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ctrl_loops/velocity}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_commutation}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_profile/profile_velocity_mode}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motorcontrol_common/predriver}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_commutation/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_commutation/doc/images}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_profile/quick_stop_mode}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_pwm_symmetrical/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_hall/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_statemachine/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_qei/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_qei/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_xscope-wrapper/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ctrl_loops/position}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_profile}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motorcontrol_common}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks/src/util}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_statemachine/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motorcontrol_common/delay}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_statemachine/doc/images}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_statemachine/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_adc/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_profile/profile_ctrl}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks/src/control_blocks/watchdog}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ctrl_loops/torque}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_qei/doc/images}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_commutation/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_gpio/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_statemachine}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_qei}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks/src/control_blocks}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/targets}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motorcontrol_common/pwm}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks/src/filter_blocks}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_profile/profile_linear_mode}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ctrl_loops}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_hall}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_hall/doc/images}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_adc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_gpio}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motorcontrol_common/include}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.xc.compiler.input.322492251" name="XC" superClass="com.xmos.cdt.xc.compiler.input"/>
 							</tool>
@@ -914,6 +1108,54 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_motor}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motor/src/motors}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_motor/src/motors}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_profile/profile_position_mode}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_pwm_symmetrical/src/common}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_hall/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ctrl_loops/velocity}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_commutation}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_profile/profile_velocity_mode}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motorcontrol_common/predriver}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_commutation/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_commutation/doc/images}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_profile/quick_stop_mode}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_pwm_symmetrical/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_hall/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_statemachine/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_qei/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_qei/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_xscope-wrapper/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ctrl_loops/position}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_profile}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motorcontrol_common}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks/src/util}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_statemachine/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motorcontrol_common/delay}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_statemachine/doc/images}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_statemachine/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_adc/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_profile/profile_ctrl}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks/src/control_blocks/watchdog}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ctrl_loops/torque}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_qei/doc/images}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_commutation/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_gpio/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_statemachine}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_qei}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks/src/control_blocks}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/targets}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motorcontrol_common/pwm}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks/src/filter_blocks}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_profile/profile_linear_mode}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ctrl_loops}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_hall}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_hall/doc/images}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_adc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_gpio}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motorcontrol_common/include}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.c.compiler.input.c.1158077700" name="C" superClass="com.xmos.cdt.c.compiler.input.c"/>
 							</tool>
@@ -1081,6 +1323,54 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_motor}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motor/src/motors}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sc_sncn_motorcontrol/module_motor/src/motors}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_profile/profile_position_mode}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_pwm_symmetrical/src/common}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_hall/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ctrl_loops/velocity}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_commutation}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_profile/profile_velocity_mode}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motorcontrol_common/predriver}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_commutation/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_commutation/doc/images}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_profile/quick_stop_mode}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_pwm_symmetrical/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_hall/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_statemachine/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_qei/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_qei/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_xscope-wrapper/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ctrl_loops/position}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_profile}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motorcontrol_common}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks/src/util}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_statemachine/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motorcontrol_common/delay}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_statemachine/doc/images}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_statemachine/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_adc/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_profile/profile_ctrl}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks/src/control_blocks/watchdog}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ctrl_loops/torque}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_qei/doc/images}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_commutation/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_gpio/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_statemachine}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_qei}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks/src/control_blocks}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/targets}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motorcontrol_common/pwm}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_blocks/src/filter_blocks}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_profile/profile_linear_mode}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ctrl_loops}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_hall}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_hall/doc/images}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_adc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_gpio}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motorcontrol_common/include}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.cxx.compiler.input.cpp.943333917" name="C++" superClass="com.xmos.cdt.cxx.compiler.input.cpp"/>
 							</tool>
