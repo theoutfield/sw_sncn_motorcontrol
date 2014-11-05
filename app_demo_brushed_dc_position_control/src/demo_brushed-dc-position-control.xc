@@ -36,6 +36,7 @@
 #include <profile.h>
 #include <bldc_motor_config.h>
 #include <watchdog.h>
+
 //#define ENABLE_xscope
 
 on tile[IFM_TILE]: clock clk_adc = XS1_CLKBLK_1;
@@ -53,7 +54,7 @@ void xscope_initialise_1()
 void position_profile_test(chanend c_position_ctrl, chanend c_qei, chanend c_hall)
 {
 	int actual_position = 0;			// ticks
-	int target_position = 1997;			// ticks
+	int target_position = GEAR_RATIO*ENCODER_RESOLUTION*5;			// ticks
 	int velocity 		= 500;			// rpm
 	int acceleration 	= 100;			// rpm/s
 	int deceleration 	= 100;     		// rpm/s
@@ -71,6 +72,8 @@ void position_profile_test(chanend c_position_ctrl, chanend c_qei, chanend c_hal
 #ifdef ENABLE_xscope
 	xscope_initialise_1();
 #endif
+
+	int init = init_position_control(c_position_ctrl);
 
 	/* Set new target position for profile position control */
 	set_profile_position(target_position, velocity, acceleration, deceleration, SENSOR_USED, c_position_ctrl);
@@ -91,7 +94,7 @@ int main(void)
 	// Motor control channels
 	chan c_qei_p1, c_qei_p2, c_qei_p3, c_qei_p4, c_qei_p5, c_hall_p6, c_qei_p6;		// qei channels
 	chan c_hall_p1, c_hall_p2, c_hall_p3, c_hall_p4, c_hall_p5;						// hall channels
-	chan c_voltage_p1, c_voltage_p2, c_voltage_p3, c_signal;						// motor drive channels
+	chan c_commutation;						// motor drive channels
 	chan c_pwm_ctrl, c_adctrig;														// pwm channels
 	chan c_position_ctrl;															// position control channel
 	chan c_watchdog; 																// watchdog channel
@@ -123,7 +126,7 @@ int main(void)
 
 				 /* Control Loop */
 				 position_control(position_ctrl_params, hall_params, qei_params, SENSOR_USED, c_hall_p2,\
-						 c_qei_p2, c_position_ctrl, c_voltage_p1);
+						 c_qei_p2, c_position_ctrl, c_commutation);
 			}
 		}
 
@@ -140,7 +143,7 @@ int main(void)
 
 				/* Brushed Motor Drive loop */
 				{
-					bdc_loop(c_watchdog, c_signal, c_voltage_p1, c_voltage_p2, c_voltage_p3, c_pwm_ctrl,\
+					bdc_loop(c_watchdog, c_commutation, c_pwm_ctrl,\
 							p_ifm_esf_rstn_pwml_pwmh, p_ifm_coastn, p_ifm_ff1, p_ifm_ff2);
 				}
 
