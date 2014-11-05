@@ -32,33 +32,25 @@
 #include <qei_client.h>
 #include <bldc_motor_config.h>
 #include <watchdog.h>
-//#define ENABLE_xscope
 
 on tile[IFM_TILE]: clock clk_adc = XS1_CLKBLK_1;
 on tile[IFM_TILE]: clock clk_pwm = XS1_CLKBLK_REF;
-
-void xscope_initialise_1()
-{
-    xscope_register(2, XSCOPE_CONTINUOUS, "0 actual_velocity", XSCOPE_INT,	"n",
-                        XSCOPE_CONTINUOUS, "1 target_velocity", XSCOPE_INT, "n");
-}
 
 
 /* Test Profile Velocity function */
 void profile_velocity_test(chanend c_velocity_ctrl)
 {
-	int target_velocity = 500;	 		// rpm
+	int target_velocity = 5000;	 		// rpm
 	int acceleration 	= 500;			// rpm/s
-	int deceleration 	= 100;			// rpm/s
+	int deceleration 	= 500;			// rpm/s
+	int init_state = 0;
 
-#ifdef ENABLE_xscope
-	xscope_initialise_1();
-#endif
+    init_state = init_velocity_control(c_velocity_ctrl);
 
 	set_profile_velocity( target_velocity, acceleration, deceleration, MAX_PROFILE_VELOCITY, c_velocity_ctrl);
 
-	//target_velocity = 0;				// rpm
-	//set_profile_velocity( target_velocity, acceleration, deceleration, MAX_PROFILE_VELOCITY, c_velocity_ctrl);
+	target_velocity = 0;				// rpm
+	set_profile_velocity( target_velocity, acceleration, deceleration, MAX_PROFILE_VELOCITY, c_velocity_ctrl);
 }
 
 int main(void)
@@ -66,7 +58,7 @@ int main(void)
 	// Motor control channels
 	chan c_qei_p1, c_qei_p2, c_qei_p3, c_qei_p4, c_qei_p5, c_hall_p6, c_qei_p6;		// qei channels
 	chan c_hall_p1, c_hall_p2, c_hall_p3, c_hall_p4, c_hall_p5;						// hall channels
-	chan c_voltage_p1, c_voltage_p2, c_voltage_p3, c_signal;						// motor drive channels
+	chan c_commutation;						// motor drive channels
 	chan c_pwm_ctrl, c_adctrig;														// pwm channels
 	chan c_velocity_ctrl;															// velocity control channel
 	chan c_watchdog; 																// watchdog channel
@@ -99,7 +91,7 @@ int main(void)
 
 				/* Control Loop */
 				velocity_control(velocity_ctrl_params, sensor_filter_params, hall_params, \
-					 qei_params, SENSOR_USED, c_hall_p2, c_qei_p2, c_velocity_ctrl, c_voltage_p2);
+					 qei_params, SENSOR_USED, c_hall_p2, c_qei_p2, c_velocity_ctrl, c_commutation);
 			}
 		}
 
@@ -116,7 +108,7 @@ int main(void)
 
 				/* Brushed Motor Drive loop */
 
-                bdc_loop(c_watchdog, c_signal, c_voltage_p1, c_voltage_p2, c_voltage_p3, c_pwm_ctrl,\
+                bdc_loop(c_watchdog, c_commutation, c_pwm_ctrl,\
                         p_ifm_esf_rstn_pwml_pwmh, p_ifm_coastn, p_ifm_ff1, p_ifm_ff2);
 
 
