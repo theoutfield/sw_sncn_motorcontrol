@@ -4,7 +4,6 @@
 
 /**
  * @brief Test illustrates usage of module_commutation
- * @author Andrija Feher <afeher@synapticon.com>
  * @date 17/06/2014
  */
 #include <xs1.h>

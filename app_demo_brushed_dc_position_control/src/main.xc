@@ -2,15 +2,6 @@
 #include <CORE_BOARD_REQUIRED>
 #include <IFM_BOARD_REQUIRED>
 
-/**
- * @file
- * @brief Test illustrates usage of profile position control for brushed dc motor
- * @author Pavan Kanajar <pkanajar@synapticon.com>
- * @author Martin Schwarz <mschwarz@synapticon.com>
- * @version 0.9beta
- * @date 10/04/2014
- */
-
 #include <xs1.h>
 #include <platform.h>
 #include <print.h>
