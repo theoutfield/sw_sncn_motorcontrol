@@ -1,12 +1,12 @@
 # The TARGET variable determines what target system the application is
 # compiled for. It either refers to an XN file in the source directories
 # or a valid argument for the --target option when compiling
-TARGET = SOMANET-C22-Motor_control-XScope_v13
+#TARGET = SOMANET-C22-Motor_control-XScope_v13
 
 # The APP_NAME variable determines the name of the final .xe file. It should
 # not include the .xe postfix. If left blank the name will default to
 # the project name
-APP_NAME = 
+APP_NAME = app_demo_brushed_dc_velocity_control
 
 # The USED_MODULES variable lists other module used by the application.
 USED_MODULES = module_adc module_blocks module_board-support module_brushed_dc module_commutation module_ctrl_loops module_hall module_motor module_motorcontrol_common module_profile module_pwm_symmetrical module_qei module_statemachine module_xscope-wrapper
