@@ -28,7 +28,7 @@
 #include <qei_client.h>
 #include <gpio_server.h>
 #include <gpio_client.h>
-#include <bldc_motor_init.h>
+#include <bldc_motor_config.h>
 
 on tile[IFM_TILE]: clock clk_adc = XS1_CLKBLK_1;
 on tile[IFM_TILE]: clock clk_pwm = XS1_CLKBLK_REF;
