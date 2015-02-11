@@ -5,12 +5,8 @@ Key Features
 ------------
 
    * Sinusoidal Commutation
-   * Profile Position Control
-   * Profile Velocity Control
-   * Profile Torque Control
-   * Support QEI sensor with Index/ no Index
-   * Support Hall sensor
-   * Support external Analog sensor
+   * BDC Profile Position Control
+   * BDC Profile Velocity Control
 
 Firmware overview
 -----------------
