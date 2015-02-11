@@ -4,42 +4,39 @@ SOMANET Motor Control Software Package
 Key Features
 ------------
 
--  Sinusoidal Commutation
--  Profile Position Control
--  Profile Velocity Control
--  Profile Torque Control
--  EtherCAT Operating Modes
--  Support QEI sensor with Index/ no Index
--  Support Hall sensor
--  Support external Analog sensor
+   * Sinusoidal Commutation
+   * Profile Position Control
+   * Profile Velocity Control
+   * Profile Torque Control
+   * Support QEI sensor with Index/ no Index
+   * Support Hall sensor
+   * Support external Analog sensor
 
-Further information
--------------------
+Firmware overview
+-----------------
 
--  sc\_sncn\_motorctrl\_sin
-   `DOCUMENTATION <http://synapticon.github.io/sc_sncn_motorctrl_sin/>`_
+The Package includes a collection of Motor Control applications that can be used together with the SOMANET/XMOS EtherCAT evaluation kit or with other custom evaluation kits. 
 
 Known Issues
 ------------
 
 -  None
 
-Required software (dependencies)
---------------------------------
-
--  `sc\_somanet-base <https://github.com/synapticon/sc_somanet-base>`_
--  `sc\_pwm <https://github.com/synapticon/sc_pwm>`_
--  `sc\_sncn\_ethercat <https://github.com/synapticon/sc_sncn_ethercat>`_
-   (only if using EtherCAT Operating Modes)
-
-Changelog
----------
-
--  `0.9beta <https://github.com/synapticon/sc_sncn_ctrlproto/releases/tag/v0.9-beta>`_
-   (2013-01-24)
-
-License
+Support
 -------
 
-Please see
-`LICENSE <http://synapticon.github.io/sc_sncn_motorctrl_sin/legal.html>`_.
+Issues may be submitted via the Issues tab in this GitHub repository. Response to any issues submitted is at the discretion of the maintainer for this line.
+
+Documentation
+=============
+`Extensive documentation`_
+
+.. _Extensive documentation: http://85.214.233.250:90/codedocs/develop/sw_sncn_motorcontrol_ethercat_kit/index.html
+
+Required software (dependencies)
+================================
+
+  * sc_pwm (https://github.com/synapticon/sc_pwm.git)
+  * sc_sncn_motorcontrol (https://github.com/synapticon/sc_sncn_motorcontrol.git)
+  * sc_somanet-base (git@github.com:djpwilk/sc_somanet-base.git)
+
