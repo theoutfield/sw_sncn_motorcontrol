@@ -7,10 +7,10 @@
 # The APP_NAME variable determines the name of the final .xe file. It should
 # not include the .xe postfix. If left blank the name will default to
 # the project name
-APP_NAME = app_demo_sin_commutation
+APP_NAME = app_demo_bdc_commutation
 
 # The USED_MODULES variable lists other module used by the application.
-USED_MODULES = module_adc module_blocks module_board-support module_commutation module_hall module_motor module_motorcontrol_common module_pwm_symmetrical module_qei module_statemachine module_xscope-wrapper
+USED_MODULES = module_adc module_blocks module_board-support module_brushed_dc module_commutation module_hall module_motor module_motorcontrol_common module_pwm_symmetrical module_qei module_xscope-wrapper
 
 
 # The flags passed to xcc when building the application

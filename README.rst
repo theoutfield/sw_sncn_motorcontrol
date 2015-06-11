@@ -5,6 +5,7 @@ Key Features
 ------------
 
    * Sinusoidal Commutation
+   * BDC commutation
    * BDC Profile Position Control
    * BDC Profile Velocity Control
 

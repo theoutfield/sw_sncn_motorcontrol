@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?fileVersion 4.0.0?>
-
-<cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
 	<storageModule moduleId="org.eclipse.cdt.core.settings">
 		<cconfiguration id="com.xmos.cdt.toolchain.794238827">
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.xmos.cdt.toolchain.794238827" moduleId="org.eclipse.cdt.core.settings" name="Debug">
 				<externalSettings/>
 				<extensions>
-					<extension id="com.xmos.cdt.core.XEBinaryParser" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="com.xmos.cdt.core.XdeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.xmos.cdt.core.XEBinaryParser" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="scannerConfiguration">
@@ -255,6 +253,14 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_hall/doc/images}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_adc}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motorcontrol_common/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/COM_ETHERNET}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/CORE_C21}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/CORE_C22}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/default}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/IFM_DC300}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/COM_ECAT}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/IFM_DC100}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.xc.compiler.input.1134324534" name="XC" superClass="com.xmos.cdt.xc.compiler.input"/>
 							</tool>
@@ -462,6 +468,14 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_hall/doc/images}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_adc}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motorcontrol_common/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/COM_ETHERNET}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/CORE_C21}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/CORE_C22}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/default}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/IFM_DC300}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/COM_ECAT}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/IFM_DC100}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.c.compiler.input.c.678381819" name="C" superClass="com.xmos.cdt.c.compiler.input.c"/>
 							</tool>
@@ -675,6 +689,14 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_hall/doc/images}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_adc}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motorcontrol_common/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/COM_ETHERNET}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/CORE_C21}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/CORE_C22}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/default}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/IFM_DC300}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/COM_ECAT}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/IFM_DC100}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.cxx.compiler.input.cpp.711216607" name="C++" superClass="com.xmos.cdt.cxx.compiler.input.cpp"/>
 							</tool>
@@ -692,9 +714,9 @@
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.xmos.cdt.toolchain.1172829271" moduleId="org.eclipse.cdt.core.settings" name="Release">
 				<externalSettings/>
 				<extensions>
-					<extension id="com.xmos.cdt.core.XEBinaryParser" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="com.xmos.cdt.core.XdeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.xmos.cdt.core.XEBinaryParser" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="scannerConfiguration">
@@ -939,6 +961,14 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_hall/doc/images}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_adc}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motorcontrol_common/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/COM_ETHERNET}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/CORE_C21}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/CORE_C22}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/default}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/IFM_DC300}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/COM_ECAT}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/IFM_DC100}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.xc.compiler.input.1093278282" name="XC" superClass="com.xmos.cdt.xc.compiler.input"/>
 							</tool>
@@ -1146,6 +1176,14 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_hall/doc/images}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_adc}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motorcontrol_common/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/COM_ETHERNET}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/CORE_C21}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/CORE_C22}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/default}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/IFM_DC300}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/COM_ECAT}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/IFM_DC100}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.c.compiler.input.c.785094599" name="C" superClass="com.xmos.cdt.c.compiler.input.c"/>
 							</tool>
@@ -1359,6 +1397,14 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_hall/doc/images}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_adc}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_motorcontrol_common/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/COM_ETHERNET}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/CORE_C21}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/CORE_C22}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/default}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/IFM_DC300}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/COM_ECAT}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/IFM_DC100}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.cxx.compiler.input.cpp.9459547" name="C++" superClass="com.xmos.cdt.cxx.compiler.input.cpp"/>
 							</tool>

@@ -10,7 +10,7 @@
 APP_NAME = app_demo_brushed_dc_position_control
 
 # The USED_MODULES variable lists other module used by the application.
-USED_MODULES = motor_config module_adc module_blocks module_board-support module_brushed_dc module_commutation module_ctrl_loops module_hall module_motor module_motorcontrol_common module_profile module_pwm_symmetrical module_qei module_statemachine module_xscope-wrapper
+USED_MODULES = module_adc module_blocks module_board-support module_brushed_dc module_commutation module_ctrl_loops module_hall module_motor module_motorcontrol_common module_profile module_pwm_symmetrical module_qei module_statemachine module_xscope-wrapper
 
 # The flags passed to xcc when building the application
 # You can also set the following to override flags for a particular language:
