@@ -18,6 +18,8 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <commutation_common.h>
+#include <adc_client_ad7949.h>
+#include <adc_server_ad7949.h>
 #include <internal_config.h>
 #include <bldc_motor_config.h>
 
@@ -27,8 +29,11 @@ on tile[IFM_TILE]:clock clk_pwm = XS1_CLKBLK_REF;
 #define VOLTAGE 2000 //+/- 4095
 
 void xscope_user_init(void) {
-   xscope_register(0, 0, "", 0, "");
-//   xscope_config_io(XSCOPE_IO_TIMED);
+  xscope_register(3,
+    XSCOPE_CONTINUOUS, "Phase B",  XSCOPE_INT, "_",
+    XSCOPE_CONTINUOUS, "Phase C", XSCOPE_INT, "_",
+    XSCOPE_CONTINUOUS, "HALL pins", XSCOPE_INT, "_"
+  );
 }
 
 void set_commutation_offset_clk(chanend c_signal, unsigned offset){
@@ -51,6 +56,13 @@ void set_commutation_offset_cclk(chanend c_signal, unsigned offset){
 
 }
 
+unsigned int get_hall_pinstate(chanend c_hall){
+    c_hall <: HALL_REQUEST_PORT_STATES;
+    unsigned int state;
+    c_hall :> state;
+    return state;
+}
+
 int main(void) {
 
     // Motor control channels
@@ -59,10 +71,11 @@ int main(void) {
     chan c_commutation_p1, c_commutation_p2, c_commutation_p3, c_signal; // commutation channels
     chan c_pwm_ctrl, c_adctrig; // pwm channels
     chan c_watchdog;
+    chan c_adc;
 
     par
     {
-        on tile[0]:
+        on tile[0]://WARNING: only one blocking task is possible per tile. Waiting for a user input blocks other tasks on the same tile from execution.
         {
             set_commutation_sinusoidal(c_commutation_p1, VOLTAGE);
 
@@ -104,6 +117,11 @@ int main(void) {
         {
             par
             {
+                /* ADC Loop */
+                adc_ad7949_triggered(c_adc, c_adctrig, clk_adc,\
+                        p_ifm_adc_sclk_conv_mosib_mosia, p_ifm_adc_misoa,\
+                        p_ifm_adc_misob);
+
                 /* PWM Loop */
                 do_pwm_inv_triggered(c_pwm_ctrl, c_adctrig, p_ifm_dummy_port,
                         p_ifm_motor_hi, p_ifm_motor_lo, clk_pwm);
@@ -129,6 +147,23 @@ int main(void) {
                     hall_par hall_params;
                     run_hall(c_hall_p1, c_hall_p2, c_hall_p3, c_hall_p4,
                             c_hall_p5, c_hall_p6, p_ifm_hall, hall_params); // channel priority 1,2..6
+                }
+
+                /*Current sampling*/
+                // It is placed here only for an educational purpose. Sampling with XSCOPE can also be done inside the adc server.
+                {
+                    calib_data I_calib;
+                    do_adc_calibration_ad7949(c_adc, I_calib);
+                    while (1) {
+                        int b, c;
+                        unsigned int state;
+                        {b, c} = get_adc_calibrated_current_ad7949(c_adc, I_calib);
+                        state = get_hall_pinstate(c_hall_p2);
+                        xscope_int(0, b);
+                        xscope_int(1, c);
+                        xscope_int(2, state);
+                        delay_microseconds(10);
+                    }
                 }
             }
         }
