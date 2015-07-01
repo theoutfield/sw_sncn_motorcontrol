@@ -14,11 +14,42 @@
 #include <refclk.h>
 #include <drive_modes.h>
 #include <statemachine.h>
+#include <xscope.h>
+#include <stdio.h>
+#include <ctype.h>
+#include <commutation_common.h>
 #include <internal_config.h>
 #include <bldc_motor_config.h>
 
 on tile[IFM_TILE]:clock clk_adc = XS1_CLKBLK_1;
 on tile[IFM_TILE]:clock clk_pwm = XS1_CLKBLK_REF;
+
+#define VOLTAGE 2000 //+/- 4095
+
+void xscope_user_init(void) {
+   xscope_register(0, 0, "", 0, "");
+//   xscope_config_io(XSCOPE_IO_TIMED);
+}
+
+void set_commutation_offset_clk(chanend c_signal, unsigned offset){
+    c_signal <: COMMUTATION_CMD_SET_PARAMS;
+    c_signal <: (60 * 4096) / (POLE_PAIRS * 2 * 360);
+    c_signal <: MAX_NOMINAL_SPEED;
+    c_signal <: offset;
+    c_signal <: COMMUTATION_OFFSET_CCLK;
+    c_signal <: WINDING_TYPE;
+
+}
+
+void set_commutation_offset_cclk(chanend c_signal, unsigned offset){
+    c_signal <: COMMUTATION_CMD_SET_PARAMS;
+    c_signal <: (60 * 4096) / (POLE_PAIRS * 2 * 360);
+    c_signal <: MAX_NOMINAL_SPEED;
+    c_signal <: COMMUTATION_OFFSET_CLK;
+    c_signal <: offset;
+    c_signal <: WINDING_TYPE;
+
+}
 
 int main(void) {
 
@@ -33,10 +64,41 @@ int main(void) {
     {
         on tile[0]:
         {
-            while (1) {
-                set_commutation_sinusoidal(c_commutation_p1, 2000);
+            set_commutation_sinusoidal(c_commutation_p1, VOLTAGE);
+
+            /* Hall offset tuning app */
+            {
+                delay_seconds(1);
+                printf (" Please enter an offset value different from %d, then press enter\n",
+                        (VOLTAGE > 0) ? ((WINDING_TYPE == 1) ? COMMUTATION_OFFSET_CLK : COMMUTATION_OFFSET_CCLK) : ((WINDING_TYPE == 1) ? COMMUTATION_OFFSET_CCLK : COMMUTATION_OFFSET_CLK)  );
+                fflush(stdout);
+                while (1) {
+                    char c;
+                    unsigned value = 0;
+                    //reading user input. Only positive integers are accepted
+                    while((c = getchar ()) != '\n'){
+                        if(isdigit(c)>0){
+                            value *= 10;
+                            value += c - '0';
+                        }
+                    }
+                    printf("setting %i\n", value);
+                    //please note for the delta winding type offset_clk and offset_cclk are flipped
+                    if (VOLTAGE > 0)
+                    {        //star winding
+                        if (WINDING_TYPE == 1) set_commutation_offset_clk(c_commutation_p2, value);//910
+                        else set_commutation_offset_cclk(c_commutation_p2, value);//2460
+                    }
+                    else
+                    {
+                        if (WINDING_TYPE == 1) set_commutation_offset_cclk(c_commutation_p2, value);//2460
+                        else set_commutation_offset_clk(c_commutation_p2, value);//910
+                    }
+
+                    delay_milliseconds(10);
+                }
             }
-        }
+       }
 
         on tile[IFM_TILE]:
         {
