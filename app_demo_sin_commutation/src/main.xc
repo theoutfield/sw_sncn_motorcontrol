@@ -56,13 +56,6 @@ void set_commutation_offset_cclk(chanend c_signal, unsigned offset){
 
 }
 
-unsigned int get_hall_pinstate(chanend c_hall){
-    c_hall <: HALL_REQUEST_PORT_STATES;
-    unsigned int state;
-    c_hall :> state;
-    return state;
-}
-
 int main(void) {
 
     // Motor control channels
@@ -156,7 +149,7 @@ int main(void) {
                     do_adc_calibration_ad7949(c_adc, I_calib);
                     while (1) {
                         int b, c;
-                        unsigned int state;
+                        unsigned state;
                         {b, c} = get_adc_calibrated_current_ad7949(c_adc, I_calib);
                         state = get_hall_pinstate(c_hall_p2);
                         xscope_int(0, b);
