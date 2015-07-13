@@ -118,11 +118,16 @@ int main(void) {
                     qei_par qei_params;
                     commutation_par commutation_params;
                     init_hall_param(hall_params);
+
                     commutation_sinusoidal(c_hall_p1, c_qei_p1, c_signal,
                             c_watchdog, c_commutation_p1, c_commutation_p2,
                             c_commutation_p3, c_pwm_ctrl,
-                            null, null, null,
-                            null, hall_params, qei_params,
+#ifdef DC1K
+                            null, null, null, null,
+#else
+                            p_ifm_esf_rstn_pwml_pwmh, p_ifm_coastn, p_ifm_ff1, p_ifm_ff2,
+#endif
+                            hall_params, qei_params,
                             commutation_params);
                 }
 
