@@ -90,9 +90,13 @@ int main(void) {
                         p_ifm_adc_sclk_conv_mosib_mosia, p_ifm_adc_misoa,\
                         p_ifm_adc_misob);
 #endif
-                /* Watchdog Server */   //p_ifm_wd_tick, p_ifm_shared_leds_wden
-                run_watchdog(c_watchdog, null, p_ifm_led_moton_wdtick_wden);
 
+                /* Watchdog Server */
+#ifdef DC1K
+                run_watchdog(c_watchdog, null, p_ifm_led_moton_wdtick_wden);
+#else
+                run_watchdog(c_watchdog, p_ifm_wd_tick, p_ifm_shared_leds_wden);
+#endif
 
                 /* PWM Loop */
                 {
