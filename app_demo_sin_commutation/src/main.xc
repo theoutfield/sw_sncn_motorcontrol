@@ -54,7 +54,6 @@ void xscope_user_init(void) {
 }
 
 
-
 int main(void) {
 
     // Motor control channels
