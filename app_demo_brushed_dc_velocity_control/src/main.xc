@@ -89,7 +89,7 @@ void profile_velocity_slave(chanend c_velocity_ctrl, server interface virtual_ma
             case i_vm.set_velocity(int velocity_sp):
                     actual_velocity = get_velocity(c_velocity_ctrl);
                     target_velocity = velocity_sp;
-                    steps = __initialize_velocity_profile(target_velocity, actual_velocity, acceleration, deceleration, MAX_PROFILE_VELOCITY*2, profile_velocity_params);
+                    steps = __initialize_velocity_profile(target_velocity, actual_velocity, acceleration, deceleration, MAX_PROFILE_VELOCITY, profile_velocity_params);
                     steps_increment = 1;
                 break;
             case i_vm.set_acceleration(int acc):
