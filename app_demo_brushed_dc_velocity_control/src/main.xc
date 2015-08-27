@@ -13,7 +13,7 @@
 #include <refclk.h>
 #include <velocity_ctrl_client.h>
 #include <velocity_ctrl_server.h>
-#include <xscope_wrapper.h>
+#include <xscope.h>
 #include <internal_config.h>
 #include <drive_modes.h>
 #include <statemachine.h>
@@ -21,27 +21,88 @@
 #include <statemachine.h>
 #include <profile_control.h>
 #include <qei_client.h>
-#include <bldc_motor_config.h>
+#include <profile.h>
 #include <watchdog.h>
+#include <bldc_motor_config.h>
 
 on tile[IFM_TILE]: clock clk_adc = XS1_CLKBLK_1;
 on tile[IFM_TILE]: clock clk_pwm = XS1_CLKBLK_REF;
 
-
-/* Test Profile Velocity function */
-void profile_velocity_test(chanend c_velocity_ctrl)
+interface virtual_master
 {
-	int target_velocity = 5000;	 		// rpm
-	int acceleration 	= 500;			// rpm/s
-	int deceleration 	= 500;			// rpm/s
-	int init_state = 0;
+    void set_velocity(int velocity_sp);
+    void set_acceleration(int acc);
+    void set_deceleration(int dec);
+    int get_velocity(void);
+};
 
-    init_state = init_velocity_control(c_velocity_ctrl);
+/* Velocity Setpoints commanding task */
+[[combinable]]
+void profile_velocity_master(client interface virtual_master i_vm){
+    int velocity_sp = 2000;
+    timer tmr;
+    long unsigned int time = 0;
+    i_vm.set_acceleration(600);
+    i_vm.set_deceleration(600);
 
-	set_profile_velocity( target_velocity, acceleration, deceleration, MAX_PROFILE_VELOCITY, c_velocity_ctrl);
+    while(1){
+        select{
+            case tmr when timerafter(time + SEC_STD*50) :> time:
+                i_vm.set_velocity(velocity_sp);
+                velocity_sp *= -1;
+            break;
+        }
+    }
+}
 
-	target_velocity = 0;				// rpm
-	set_profile_velocity( target_velocity, acceleration, deceleration, MAX_PROFILE_VELOCITY, c_velocity_ctrl);
+/* Profile Velocity execution task */
+[[combinable]]
+void profile_velocity_slave(chanend c_velocity_ctrl, server interface virtual_master i_vm)
+{
+	int target_velocity = 0;	 		// rpm
+	int acceleration 	= 0;			// rpm/s
+	int deceleration 	= 0;			// rpm/s
+    timer tmr;
+    unsigned int time = 0;
+    int steps = 0, steps_increment = 1, velocity_ramp = 0, actual_velocity = 0;
+    profile_velocity_param profile_velocity_params;
+
+    int init_state = init_velocity_control(c_velocity_ctrl);
+    printf("initialized: %d\n", init_state);
+
+	while(1){
+	    select {
+	        //Execute Profile Ramp
+            case tmr when timerafter(time + MSEC_STD) :> time:
+                    if(steps_increment < steps) {
+                        velocity_ramp = __velocity_profile_generate_in_steps(steps_increment, profile_velocity_params);
+                        set_velocity(velocity_ramp, c_velocity_ctrl);
+                        actual_velocity = get_velocity(c_velocity_ctrl);
+                        xscope_int(PROFILE, velocity_ramp);
+                        xscope_int(VELOCITY, actual_velocity);
+                        steps_increment++;
+                    }
+                    else if (target_velocity == 0) {
+                        set_velocity(target_velocity, c_velocity_ctrl);
+                    }
+                break;
+            case i_vm.set_velocity(int velocity_sp):
+                    actual_velocity = get_velocity(c_velocity_ctrl);
+                    target_velocity = velocity_sp;
+                    steps = __initialize_velocity_profile(target_velocity, actual_velocity, acceleration, deceleration, MAX_PROFILE_VELOCITY*2, profile_velocity_params);
+                    steps_increment = 1;
+                break;
+            case i_vm.set_acceleration(int acc):
+                    acceleration = acc;
+                break;
+            case i_vm.set_deceleration(int dec):
+                    deceleration = dec;
+                break;
+            case i_vm.get_velocity(void) -> int velocity:
+                    velocity = get_velocity(c_velocity_ctrl);
+                    break;
+	    }
+	}
 }
 
 int main(void)
@@ -53,16 +114,21 @@ int main(void)
 	chan c_pwm_ctrl, c_adctrig;														// pwm channels
 	chan c_velocity_ctrl;															// velocity control channel
 	chan c_watchdog; 																// watchdog channel
+	interface virtual_master i_vm;
 
 	par
 	{
 		/* Test Profile Velocity function */
-		on tile[0]:
+		on tile[APP_TILE]:
 		{
-			profile_velocity_test(c_velocity_ctrl);			// test PVM on node
+		    [[combine]]
+		    par{
+		        profile_velocity_master(i_vm);
+			    profile_velocity_slave(c_velocity_ctrl, i_vm);			// test PVM on node
+			}
 		}
 
-		on tile[0]:
+		on tile[APP_TILE]:
 		{
 			/* Velocity Control Loop */
 			{
