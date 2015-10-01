@@ -71,7 +71,7 @@ int main(void) {
     par
     {
 
-        on tile[APP_TILE]:
+        on tile[APP_TILE_1]:
         {
             /* WARNING: only one blocking task is possible per tile. */
             /* Waiting for a user input blocks other tasks on the same tile from execution. */
@@ -102,16 +102,7 @@ int main(void) {
                 {
 #ifdef DC1K
                     // Turning off all MOSFETs for for initialization
-                    p_ifm_motor_hi[0] <: 0;
-                    p_ifm_motor_hi[1] <: 0;
-                    p_ifm_motor_hi[2] <: 0;
-                    p_ifm_motor_hi[3] <: 0;
-                    p_ifm_motor_lo[0] <: 0;
-                    p_ifm_motor_lo[1] <: 0;
-                    p_ifm_motor_lo[2] <: 0;
-                    p_ifm_motor_lo[3] <: 0;
-
-                    delay_milliseconds(1);
+                    disable_fets(p_ifm_motor_hi, p_ifm_motor_lo, 4);
 #endif
                     do_pwm_inv_triggered(c_pwm_ctrl, c_adctrig, p_ifm_dummy_port,
                                         p_ifm_motor_hi, p_ifm_motor_lo, clk_pwm);
@@ -142,13 +133,10 @@ int main(void) {
                     #ifdef DC1K
                     //connector 1
                     p_ifm_encoder_hall_select_ext_d4to5 <: SET_ALL_AS_HALL;
-                    run_hall(c_hall_p1, c_hall_p2, c_hall_p3, c_hall_p4, c_hall_p5, c_hall_p6,
-                                            p_ifm_encoder_hall_1, hall_params); // channel priority 1,2..6
-
-                    #else
+                    #endif
                     run_hall(c_hall_p1, c_hall_p2, c_hall_p3, c_hall_p4, c_hall_p5, c_hall_p6,
                             p_ifm_hall, hall_params); // channel priority 1,2..6
-                    #endif
+
                 }
 
                 /*Current sampling*/
