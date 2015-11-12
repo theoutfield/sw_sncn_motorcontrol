@@ -24,11 +24,6 @@
 on tile[IFM_TILE]:clock clk_adc = XS1_CLKBLK_1;
 on tile[IFM_TILE]:clock clk_pwm = XS1_CLKBLK_REF;
 
-void xscope_user_init(void) {
-   xscope_register(0, 0, "", 0, "");
-   xscope_config_io(XSCOPE_IO_TIMED);
-}
-
 void set_BDC_motor_voltage(chanend c_commutation, int input_voltage){
     c_commutation <: BDC_CMD_SET_VOLTAGE;
     c_commutation <: input_voltage;

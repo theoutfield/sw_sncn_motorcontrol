@@ -4,7 +4,7 @@
 
 #include <xs1.h>
 #include <platform.h>
-#include <print.h>
+#include <stdio.h>
 #include <hall_server.h>
 #include <qei_server.h>
 #include <pwm_service_inv.h>
@@ -13,7 +13,6 @@
 #include <refclk.h>
 #include <velocity_ctrl_client.h>
 #include <velocity_ctrl_server.h>
-#include <xscope_wrapper.h>
 #include <internal_config.h>
 #include <drive_modes.h>
 #include <statemachine.h>
@@ -33,14 +32,6 @@
 on tile[IFM_TILE]: clock clk_adc = XS1_CLKBLK_1;
 on tile[IFM_TILE]: clock clk_pwm = XS1_CLKBLK_REF;
 
-void xscope_initialise_1()
-{
-	xscope_register(3, XSCOPE_CONTINUOUS, "0 actual_position", XSCOPE_INT,	"n",
-						XSCOPE_CONTINUOUS, "1 target_position", XSCOPE_INT, "n",
-						XSCOPE_CONTINUOUS, "2 follow_error", XSCOPE_INT, "n");
-}
-
-
 /* Test Profile Position function */
 void position_profile_test(chanend c_position_ctrl, chanend c_qei, chanend c_hall)
 {
@@ -49,7 +40,7 @@ void position_profile_test(chanend c_position_ctrl, chanend c_qei, chanend c_hal
 	int velocity 		= 500;			// rpm
 	int acceleration 	= 100;			// rpm/s
 	int deceleration 	= 100;     		// rpm/s
-	int follow_error;
+	int following_error;
 	timer t;
 	hall_par hall_params;
 	qei_par qei_params;
@@ -59,10 +50,6 @@ void position_profile_test(chanend c_position_ctrl, chanend c_qei, chanend c_hal
 	/* Initialise Profile Limits for position profile generator and select position sensor */
 	init_position_profile_limits(MAX_ACCELERATION, MAX_PROFILE_VELOCITY, qei_params, hall_params, \
 			SENSOR_USED, MAX_POSITION_LIMIT, MIN_POSITION_LIMIT);
-
-#ifdef ENABLE_xscope
-	xscope_initialise_1();
-#endif
 
 	int init = init_position_control(c_position_ctrl);
 
@@ -75,8 +62,8 @@ void position_profile_test(chanend c_position_ctrl, chanend c_qei, chanend c_hal
 	while(1)
 	{
 		actual_position = get_position(c_position_ctrl);
-		follow_error = target_position - actual_position;
-		wait_ms(1, 1, t);  /* 1 ms wait */
+		following_error = target_position - actual_position;
+		printf("actual position: %i  |  following error: %i\n", actual_position, following_error);
 	}
 }
 

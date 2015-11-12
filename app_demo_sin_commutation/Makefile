@@ -10,7 +10,7 @@
 APP_NAME = app_demo_sin_commutation
 
 # The USED_MODULES variable lists other module used by the application.
-USED_MODULES = module_adc module_blocks module_board-support module_commutation module_hall module_motor module_motorcontrol_common module_pwm_symmetrical module_qei module_statemachine module_xscope-wrapper
+USED_MODULES = module_adc module_blocks module_board-support module_commutation module_hall module_motor module_motorcontrol_common module_pwm_symmetrical module_qei module_statemachine
 
 
 # The flags passed to xcc when building the application
@@ -18,8 +18,8 @@ USED_MODULES = module_adc module_blocks module_board-support module_commutation 
 # XCC_XC_FLAGS, XCC_C_FLAGS, XCC_ASM_FLAGS, XCC_CPP_FLAGS
 # If the variable XCC_MAP_FLAGS is set it overrides the flags passed to
 # xcc for the final link (mapping) stage.
-XCC_FLAGS_Debug = -g -O0 -fxscope
-XCC_FLAGS_Release = -g -O3 -fxscope
+XCC_FLAGS_Debug = -g -O0 
+XCC_FLAGS_Release = -g -O3 
 
 # The XCORE_ARM_PROJECT variable, if set to 1, configures this
 # project to create both xCORE and ARM binaries.

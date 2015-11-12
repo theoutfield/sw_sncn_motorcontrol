@@ -2,6 +2,7 @@
 #include <CORE_BOARD_REQUIRED>
 #include <IFM_BOARD_REQUIRED>
 
+
 /**
  * @brief Test illustrates usage of module_commutation
  * @date 17/06/2014
@@ -37,21 +38,13 @@ void adc_client(client interface ADC i_adc, chanend c_hall_){
     while(1){
         {phaseB, phaseC, sampling_time} = i_adc.get_adc_measurements(1, 1);//port_id, config
         hall_state = get_hall_pinstate(c_hall_);
-        xscope_int(0, phaseB);
-        xscope_int(1, phaseC);
-        xscope_int(2, hall_state);
+        xscope_int(PHASE_B, phaseB);
+        xscope_int(PHASE_C, phaseC);
+        xscope_int(HALL_PINS, hall_state);
         delay_microseconds(50);
     }
 }
 #endif
-
-void xscope_user_init(void) {
-  xscope_register(3,
-    XSCOPE_CONTINUOUS, "Phase B",  XSCOPE_INT, "_",
-    XSCOPE_CONTINUOUS, "Phase C", XSCOPE_INT, "_",
-    XSCOPE_CONTINUOUS, "HALL pins", XSCOPE_INT, "_"
-  );
-}
 
 
 int main(void) {
@@ -152,9 +145,9 @@ int main(void) {
                         unsigned state;
                         {b, c} = get_adc_calibrated_current_ad7949(c_adc, I_calib);
                         state = get_hall_pinstate(c_hall_p2);
-                        xscope_int(0, b);
-                        xscope_int(1, c);
-                        xscope_int(2, state);
+                        xscope_int(PHASE_B, b);
+                        xscope_int(PHASE_C, c);
+                        xscope_int(HALL_PINS, state);
                         delay_microseconds(10);
                     }
                 }
