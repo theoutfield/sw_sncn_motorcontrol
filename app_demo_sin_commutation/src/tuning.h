@@ -25,6 +25,6 @@ void set_commutation_offset_clk(chanend c_signal, unsigned offset);
 
 void set_commutation_offset_cclk(chanend c_signal, unsigned offset);
 
-void run_offset_tuning(int input_voltage, chanend c_commutation_p1, chanend c_commutation_p2);
+void run_offset_tuning(int input_voltage, chanend c_commutation_p1, client interface i_biss ?i_biss, int sensor_select);
 
 #endif /* TUNING_H_ */
