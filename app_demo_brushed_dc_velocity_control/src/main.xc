@@ -7,6 +7,7 @@
 #include <print.h>
 #include <hall_server.h>
 #include <qei_server.h>
+#include <biss_server.h>
 #include <pwm_service_inv.h>
 #include <brushed_dc_server.h>
 #include <brushed_dc_client.h>
@@ -27,6 +28,7 @@
 
 on tile[IFM_TILE]: clock clk_adc = XS1_CLKBLK_1;
 on tile[IFM_TILE]: clock clk_pwm = XS1_CLKBLK_REF;
+on tile[IFM_TILE]: clock clk_biss = XS1_CLKBLK_2 ;
 
 interface virtual_master
 {
@@ -115,6 +117,7 @@ int main(void)
 	chan c_velocity_ctrl;															// velocity control channel
 	chan c_watchdog; 																// watchdog channel
 	interface virtual_master i_vm;
+    interface i_biss i_biss[1];                                                     // biss interfaces
 
 	par
 	{
@@ -148,7 +151,7 @@ int main(void)
 
 				/* Control Loop */
 				velocity_control(velocity_ctrl_params, sensor_filter_params, hall_params, \
-					 qei_params, SENSOR_USED, c_hall_p2, c_qei_p2, c_velocity_ctrl, c_commutation);
+					 qei_params, SENSOR_USED, c_hall_p2, c_qei_p2, i_biss[0], c_velocity_ctrl, c_commutation);
 			}
 		}
 
@@ -178,11 +181,19 @@ int main(void)
 					run_hall(c_hall_p1, c_hall_p2, c_hall_p3, c_hall_p4, c_hall_p5, c_hall_p6, p_ifm_hall, hall_params);    // channel priority 1,2..5
 				}
 
+#if (SENSOR_USED != BISS)
 				/* QEI Server */
 				{
 					qei_par qei_params;
 					run_qei(c_qei_p1, c_qei_p2, c_qei_p3, c_qei_p4, c_qei_p5, c_qei_p6, p_ifm_encoder, qei_params);         // channel priority 1,2..5
 				}
+#else
+				/* biss server */
+				{
+				    biss_par biss_params;
+				    run_biss(i_biss, 1, p_ifm_ext_d[0], p_ifm_encoder, clk_biss, biss_params, 2);
+				}
+#endif
 
 			}
 		}
