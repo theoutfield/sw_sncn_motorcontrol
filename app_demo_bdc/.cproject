@@ -232,6 +232,12 @@
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include/clang&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/IFM_DC1K}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/IFM_DC5K}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_biss/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_biss/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_biss/doc/images}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/IFM_DC30}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_biss}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_biss/doc}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.xc.compiler.input.451755224" name="XC" superClass="com.xmos.cdt.xc.compiler.input"/>
 							</tool>
@@ -595,6 +601,12 @@
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include/clang&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/IFM_DC1K}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/IFM_DC5K}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_biss/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_biss/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_biss/doc/images}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/IFM_DC30}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_biss}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_biss/doc}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.c.compiler.input.c.1238246472" name="C" superClass="com.xmos.cdt.c.compiler.input.c"/>
 							</tool>
@@ -965,6 +977,12 @@
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include/c++/v1&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/IFM_DC1K}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/IFM_DC5K}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_biss/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_biss/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_biss/doc/images}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/IFM_DC30}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_biss}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_biss/doc}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.cxx.compiler.input.cpp.477397611" name="C++" superClass="com.xmos.cdt.cxx.compiler.input.cpp"/>
 							</tool>

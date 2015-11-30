@@ -10,7 +10,7 @@
 APP_NAME = app_demo_bdc_commutation
 
 # The USED_MODULES variable lists other module used by the application.
-USED_MODULES = module_adc module_blocks module_board-support module_brushed_dc module_commutation module_hall module_motor module_motorcontrol_common module_pwm_symmetrical module_qei
+USED_MODULES = module_adc module_blocks module_board-support module_brushed_dc module_commutation module_hall module_motor module_motorcontrol_common module_pwm_symmetrical module_biss module_qei
 
 
 # The flags passed to xcc when building the application
