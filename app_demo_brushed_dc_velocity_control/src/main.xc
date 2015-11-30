@@ -29,6 +29,7 @@
 on tile[IFM_TILE]: clock clk_adc = XS1_CLKBLK_1;
 on tile[IFM_TILE]: clock clk_pwm = XS1_CLKBLK_REF;
 on tile[IFM_TILE]: clock clk_biss = XS1_CLKBLK_2 ;
+port p_ifm_ext_d[4] = { GPIO_D0, GPIO_D1, GPIO_D2, GPIO_D3 };
 
 interface virtual_master
 {
