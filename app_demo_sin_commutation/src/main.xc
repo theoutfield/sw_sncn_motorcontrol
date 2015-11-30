@@ -1,6 +1,6 @@
 /* PLEASE REPLACE "CORE_BOARD_REQUIRED" AND "IFM_BOARD_REQUIRED" WITH AN APPROPRIATE BOARD SUPPORT FILE FROM module_board-support */
-#include <CORE_BOARD_REQUIRED>
-#include <IFM_BOARD_REQUIRED>
+#include <CORE_C21-rev-a.inc>
+#include <IFM_DC1K-rev-c2.inc>
 
 
 /**
@@ -17,10 +17,27 @@
 #include <adc_server_ad7949.h>
 #endif
 
+
+
 on tile[IFM_TILE]:clock clk_adc = XS1_CLKBLK_1;
 on tile[IFM_TILE]:clock clk_pwm = XS1_CLKBLK_REF;
 
-#define VOLTAGE 2000 //+/- 4095
+#define NUM_OF_AMS_INTERFACES 2
+
+on tile[IFM_TILE]: sensor_spi_interface p_rotary_sensor =
+{
+        {
+            XS1_CLKBLK_2,
+            XS1_CLKBLK_4,
+            GPIO_D3, //D3,    //mosi
+            GPIO_D1, //D1,    //sclk
+            GPIO_D2  //D2     //miso
+        },
+
+        GPIO_D0 //D0         //slave select
+};
+
+#define VOLTAGE 500 //+/- 4095
 
 #ifdef AD7265
 on tile[IFM_TILE]: adc_ports_t adc_ports =
@@ -32,15 +49,12 @@ on tile[IFM_TILE]: adc_ports_t adc_ports =
         ADC_MUX
 };
 
-void adc_client(client interface ADC i_adc, chanend c_hall_){
+void sample_data(client interface ADC i_adc){
     int sampling_time, phaseB, phaseC;
-    unsigned hall_state = 0;
     while(1){
         {phaseB, phaseC, sampling_time} = i_adc.get_adc_measurements(1, 1);//port_id, config
-        hall_state = get_hall_pinstate(c_hall_);
         xscope_int(PHASE_B, phaseB);
         xscope_int(PHASE_C, phaseC);
-        xscope_int(HALL_PINS, hall_state);
         delay_microseconds(50);
     }
 }
@@ -52,7 +66,7 @@ int main(void) {
     // Motor control channels
     chan c_qei_p1; // qei channels
     chan c_hall_p1, c_hall_p2, c_hall_p3, c_hall_p4, c_hall_p5, c_hall_p6; // hall channels
-    chan c_commutation_p1, c_commutation_p2, c_commutation_p3, c_signal; // commutation channels
+    chan c_commutation_p1, c_commutation_p2; // commutation channels
     chan c_pwm_ctrl, c_adctrig; // pwm channels
     chan c_watchdog;
     #ifdef AD7265
@@ -60,15 +74,17 @@ int main(void) {
     #else
         chan c_adc;
     #endif
+    interface AMS i_ams[NUM_OF_AMS_INTERFACES];
+
 
     par
     {
 
-        on tile[APP_TILE_1]:
+        on tile[APP_TILE]:
         {
             /* WARNING: only one blocking task is possible per tile. */
             /* Waiting for a user input blocks other tasks on the same tile from execution. */
-            run_offset_tuning(VOLTAGE, c_commutation_p1, c_commutation_p2);
+            run_offset_tuning(VOLTAGE, c_commutation_p1, c_commutation_p2, i_ams[1], c_hall_p2);
         }
 
         on tile[IFM_TILE]:
@@ -106,10 +122,12 @@ int main(void) {
                     qei_par qei_params;
                     commutation_par commutation_params;
                     init_hall_param(hall_params);
+                    i_ams[0].configure(set_configuration());
 
-                    commutation_sinusoidal(c_hall_p1, c_qei_p1, c_signal,
-                            c_watchdog, c_commutation_p1, c_commutation_p2,
-                            c_commutation_p3, c_pwm_ctrl,
+                    commutation_sinusoidal(c_hall_p1, c_qei_p1, i_ams[0],
+                            null, c_watchdog,
+                            c_commutation_p1, c_commutation_p2, null,
+                            c_pwm_ctrl,
 #ifdef DC1K
                             null, null, null, null,
 #else
@@ -132,10 +150,12 @@ int main(void) {
 
                 }
 
+                ams_sensor_server(i_ams, NUM_OF_AMS_INTERFACES, p_rotary_sensor);
+
                 /*Current sampling*/
                 // It is placed here only for an educational purpose. Sampling with XSCOPE can also be done inside the adc server.
                 #ifdef AD7265
-                    adc_client(i_adc, c_hall_p2);
+                sample_data(i_adc);
                 #else
                 {
                     calib_data I_calib;

@@ -29,9 +29,30 @@ void set_commutation_offset_cclk(chanend c_signal, unsigned offset){
 }
 
 
-void run_offset_tuning(int input_voltage, chanend c_commutation_p1, chanend c_commutation_p2){
-
+void run_offset_tuning(int input_voltage, chanend c_commutation_p1, chanend c_commutation_p2, client interface AMS ?i_ams, chanend ?c_hall_){
+    int absolute_position_singleturn = 0;
+    unsigned angle_electrical = 0;
     delay_seconds(1);
+//    if(!isnull(i_ams)){
+//        set_to_zero_angle(c_commutation_p1, 200);
+//        delay_seconds(3);
+//        for (int i = 0; i < 20; i++){
+//            absolute_position_singleturn += i_ams.get_absolute_position_singleturn();
+//           // printf("%i\n",i_ams.get_absolute_position_singleturn());
+//        }
+//        int offset = absolute_position_singleturn/20;
+//        printf("AMS offset: %i\n", offset);
+//
+// //       ams_config_params_t params = i_ams.get_configuration();
+//  //      params.sensor_placement_offset = absolute_position_singleturn/20;
+//        i_ams.set_offset(offset);
+//    //   i_ams.configure(params);
+//    }
+
+    if(!isnull(c_hall_)){
+        angle_electrical = get_hall_pinstate(c_hall_);
+    }
+
     set_commutation_sinusoidal(c_commutation_p1, input_voltage);
 
     printf (" Please enter an offset value different from %d, then press enter\n",
