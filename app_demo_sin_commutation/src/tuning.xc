@@ -49,7 +49,7 @@ void run_offset_tuning(int input_voltage, chanend c_commutation_p1, client inter
             (input_voltage > 0) ? ((WINDING_TYPE == 1) ? COMMUTATION_OFFSET_CLK : COMMUTATION_OFFSET_CCLK) : ((WINDING_TYPE == 1) ? COMMUTATION_OFFSET_CCLK : COMMUTATION_OFFSET_CLK)  );
     else if (sensor_select == BISS) {
         init_biss_param(biss_params);
-        printf ("BiSS tuning. Voltage %d\nPlease enter an offset value different from %d, then press enter\n", input_voltage, BISS_OFFSET_ANGLE );
+        printf ("BiSS tuning. Voltage %d\nPlease enter an offset value different from %d, then press enter\n", input_voltage, BISS_OFFSET_ELECTRICAL );
     }
     fflush(stdout);
     //read and adjust the offset
@@ -66,7 +66,7 @@ void run_offset_tuning(int input_voltage, chanend c_commutation_p1, client inter
         printf("setting %i\n", value);
         //please note for the delta winding type offset_clk and offset_cclk are flipped
         if (sensor_select == BISS) {
-            biss_params.offset_angle = value;
+            biss_params.offset_electrical = value;
             i_biss.set_params(biss_params);
         } else {
             if (input_voltage > 0)
