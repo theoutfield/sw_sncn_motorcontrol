@@ -81,7 +81,7 @@ int main(void) {
             {
                 /* ADC Loop */
 #ifdef AD7265
-                foc_adc_7265_continuous_loop(i_adc, adc_ports);
+                adc_7265_continuous_loop(i_adc, adc_ports);
 #else
                 adc_ad7949_triggered(c_adc, c_adctrig, clk_adc,\
                         p_ifm_adc_sclk_conv_mosib_mosia, p_ifm_adc_misoa,\
