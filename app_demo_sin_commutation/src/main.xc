@@ -37,7 +37,7 @@ on tile[IFM_TILE]: sensor_spi_interface p_rotary_sensor =
         GPIO_D0 //D0         //slave select
 };
 
-#define VOLTAGE 500 //+/- 4095
+#define VOLTAGE 1000 //+/- 4095
 
 #ifdef AD7265
 on tile[IFM_TILE]: adc_ports_t adc_ports =
@@ -49,12 +49,13 @@ on tile[IFM_TILE]: adc_ports_t adc_ports =
         ADC_MUX
 };
 
-void sample_data(client interface ADC i_adc){
+void sample_data(client interface ADC i_adc, client interface AMS ?i_ams){
     int sampling_time, phaseB, phaseC;
     while(1){
         {phaseB, phaseC, sampling_time} = i_adc.get_adc_measurements(1, 1);//port_id, config
-        xscope_int(PHASE_B, phaseB);
-        xscope_int(PHASE_C, phaseC);
+        xscope_int(PHASE_B, phaseB - 2048);
+        xscope_int(PHASE_C, phaseC - 2048);
+        xscope_int(VELOCITY, i_ams.get_velocity());
         delay_microseconds(50);
     }
 }
@@ -84,7 +85,7 @@ int main(void) {
         {
             /* WARNING: only one blocking task is possible per tile. */
             /* Waiting for a user input blocks other tasks on the same tile from execution. */
-            run_offset_tuning(VOLTAGE, c_commutation_p1, c_commutation_p2, i_ams[1], c_hall_p2);
+            run_offset_tuning(VOLTAGE, c_commutation_p1, c_commutation_p2, null, c_hall_p2);
         }
 
         on tile[IFM_TILE]:
@@ -155,7 +156,7 @@ int main(void) {
                 /*Current sampling*/
                 // It is placed here only for an educational purpose. Sampling with XSCOPE can also be done inside the adc server.
                 #ifdef AD7265
-                sample_data(i_adc);
+                sample_data(i_adc, i_ams[1]);
                 #else
                 {
                     calib_data I_calib;
