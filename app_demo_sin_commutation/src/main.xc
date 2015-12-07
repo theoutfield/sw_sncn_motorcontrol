@@ -1,6 +1,6 @@
 /* PLEASE REPLACE "CORE_BOARD_REQUIRED" AND "IFM_BOARD_REQUIRED" WITH AN APPROPRIATE BOARD SUPPORT FILE FROM module_board-support */
-#include <CORE_BOARD_REQUIRED>
-#include <IFM_BOARD_REQUIRED>
+#include <CORE_C21-rev-a.inc>
+#include <IFM_DC100-rev-b.inc>
 
 
 /**
@@ -24,6 +24,8 @@ on tile[IFM_TILE]:clock clk_biss = XS1_CLKBLK_2 ;
 port out p_ifm_biss_clk = GPIO_D0;
 
 #define VOLTAGE 2000 //+/- 4095
+
+t_pwm_control s_pwm_control;
 
 #ifdef AD7265
 on tile[IFM_TILE]: adc_ports_t adc_ports =
@@ -68,7 +70,7 @@ int main(void) {
     par
     {
 
-        on tile[APP_TILE_1]:
+        on tile[APP_TILE]:
         {
             /* WARNING: only one blocking task is possible per tile. */
             /* Waiting for a user input blocks other tasks on the same tile from execution. */
@@ -111,15 +113,18 @@ int main(void) {
                     commutation_par commutation_params;
                     init_hall_param(hall_params);
 
-                    commutation_sinusoidal(c_hall_p1, c_qei_p1, i_biss[0], c_signal,
-                            c_watchdog, c_commutation_p1, null, null, c_pwm_ctrl,
-#ifdef DC1K
-                            null, null, null, null,
-#else
-                            p_ifm_esf_rstn_pwml_pwmh, p_ifm_coastn, p_ifm_ff1, p_ifm_ff2,
-#endif
-                            hall_params, qei_params,
-                            commutation_params, HALL);
+                    FOC_base(foc_var,   s_pwm_control,         p_ifm_coastn,   p_ifm_esf_rstn_pwml_pwmh, p_ifm_ff1, p_ifm_ff2,
+                                        c_pwm,          c_adc,          c_hall,         c_encoder,       c_control_foc);
+
+//                    commutation_sinusoidal(c_hall_p1, c_qei_p1, i_biss[0], c_signal,
+//                            c_watchdog, c_commutation_p1, null, null, c_pwm_ctrl,
+//#ifdef DC1K
+//                            null, null, null, null,
+//#else
+//                            p_ifm_esf_rstn_pwml_pwmh, p_ifm_coastn, p_ifm_ff1, p_ifm_ff2,
+//#endif
+//                            hall_params, qei_params,
+//                            commutation_params, HALL);
                 }
 
 
