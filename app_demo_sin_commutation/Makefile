@@ -10,7 +10,7 @@ TARGET = SOMANET-C21_Motor-Control_xSCOPE
 APP_NAME = app_demo_sin_commutation
 
 # The USED_MODULES variable lists other module used by the application.
-USED_MODULES = module_adc module_biss module_blocks module_board-support module_commutation module_hall module_motor module_motorcontrol_common module_pwm_symmetrical module_qei module_statemachine
+USED_MODULES = module_adc module_blocks module_board-support module_foc_base module_hall module_pwm_symmetrical
 
 
 # The flags passed to xcc when building the application
