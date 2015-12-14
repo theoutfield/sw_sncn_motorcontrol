@@ -13,7 +13,7 @@
 #include <pwm_service_inv.h>
 #include <refclk.h>
 #include <xscope.h>
-#include <dc_motor_config.h>
+#include <bldc_motor_config.h>
 #include <watchdog.h>
 
 
@@ -73,8 +73,10 @@ int main(void) {
                     // Turning off all MOSFETs for for initialization
                     disable_fets(p_ifm_motor_hi, p_ifm_motor_lo, 4);
 #endif
-                    do_pwm_inv_triggered(c_pwm_ctrl, c_adctrig, p_ifm_dummy_port,
-                                        p_ifm_motor_hi, p_ifm_motor_lo, clk_pwm);
+//                    do_pwm_inv_triggered(c_pwm_ctrl, c_adctrig, p_ifm_dummy_port,
+//                                        p_ifm_motor_hi, p_ifm_motor_lo, clk_pwm);
+
+                    do_pwm_inv(c_pwm_ctrl, p_ifm_motor_hi, p_ifm_motor_lo, clk_pwm);
                 }
                 /* Motor Commutation loop */
                 {
