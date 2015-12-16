@@ -26,6 +26,8 @@ void set_commutation_offset_clk(chanend c_signal, unsigned offset);
 
 void set_commutation_offset_cclk(chanend c_signal, unsigned offset);
 
-void run_offset_tuning(int input_voltage, chanend c_commutation_p1, chanend c_commutation_p2, client interface AMS ?i_ams, chanend ?c_hall_);
+void run_offset_tuning(int input_voltage, chanend c_commutation_p2, client interface AMS ?i_ams, chanend ?c_hall_);
+
+void perform_ramp(int input_voltage, chanend c_commutation);
 
 #endif /* TUNING_H_ */

@@ -17,8 +17,6 @@
 #include <adc_server_ad7949.h>
 #endif
 
-
-
 on tile[IFM_TILE]:clock clk_adc = XS1_CLKBLK_1;
 on tile[IFM_TILE]:clock clk_pwm = XS1_CLKBLK_REF;
 
@@ -37,7 +35,7 @@ on tile[IFM_TILE]: sensor_spi_interface p_rotary_sensor =
         GPIO_D0 //D0         //slave select
 };
 
-#define VOLTAGE 1000 //+/- 4095
+#define VOLTAGE 1200 //+/- 4095
 
 #ifdef AD7265
 on tile[IFM_TILE]: adc_ports_t adc_ports =
@@ -50,16 +48,24 @@ on tile[IFM_TILE]: adc_ports_t adc_ports =
 };
 
 void sample_data(client interface ADC i_adc, client interface AMS ?i_ams){
-    int sampling_time, phaseB, phaseC;
+    int sampling_time, phaseB = 0, phaseC = 0, voltage_ph_A = 0, voltage_ph_B = 0, voltage_ph_C = 0, temperature = 0, dummy1, dummy2;
     while(1){
         {phaseB, phaseC, sampling_time} = i_adc.get_adc_measurements(1, 1);//port_id, config
+        {dummy1, dummy2, sampling_time} = i_adc.get_adc_measurements(2, 1);//port_id, config
+        {dummy1, dummy2, sampling_time} = i_adc.get_adc_measurements(3, 1);//port_id, config
+        {dummy1, dummy2, sampling_time} = i_adc.get_adc_measurements(4, 1);//port_id, config
+        {temperature, voltage_ph_B, sampling_time} = i_adc.get_adc_measurements(5, 1);//port_id, config
+        {voltage_ph_A, voltage_ph_C, sampling_time} = i_adc.get_adc_measurements(6, 1);//port_id, config
         xscope_int(PHASE_B, phaseB - 2048);
         xscope_int(PHASE_C, phaseC - 2048);
-        xscope_int(VELOCITY, i_ams.get_velocity());
-        delay_microseconds(50);
+        xscope_int(VOLTAGE_PH_B, voltage_ph_C * 68 / 4096.0);
+        xscope_int(TEMPERATURE, temperature);
+    //    xscope_int(VELOCITY, i_ams.get_velocity());
+  //      delay_microseconds(50);
     }
 }
 #endif
+
 
 
 int main(void) {
@@ -85,16 +91,18 @@ int main(void) {
         {
             /* WARNING: only one blocking task is possible per tile. */
             /* Waiting for a user input blocks other tasks on the same tile from execution. */
-            run_offset_tuning(VOLTAGE, c_commutation_p1, c_commutation_p2, null, c_hall_p2);
+            run_offset_tuning(VOLTAGE, c_commutation_p2, null, null);
         }
 
         on tile[IFM_TILE]:
         {
             par
             {
+                perform_ramp(VOLTAGE, c_commutation_p1);
+
                 /* ADC Loop */
 #ifdef AD7265
-                foc_adc_7265_continuous_loop(i_adc, adc_ports);
+                adc_7265_continuous_loop(i_adc, adc_ports);
 #else
                 adc_ad7949_triggered(c_adc, c_adctrig, clk_adc,\
                         p_ifm_adc_sclk_conv_mosib_mosia, p_ifm_adc_misoa,\

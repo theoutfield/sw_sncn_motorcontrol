@@ -21,6 +21,10 @@
     <!-- From the target code, call: xscope_int(PROBE_NAME, value); -->
     <Probe name="Phase B" type="CONTINUOUS" datatype="INT" units="Value" enabled="true"/>
     <Probe name="Phase C" type="CONTINUOUS" datatype="INT" units="Value" enabled="true"/>
-    <Probe name="Velocity" type="CONTINUOUS" datatype="INT" units="Value" enabled="true"/>
+    <Probe name="Velocity" type="CONTINUOUS" datatype="INT" units="Value" enabled="false"/>
+    <Probe name="Angle" type="CONTINUOUS" datatype="INT" units="Value" enabled="false"/>
+    <Probe name="Angle_pwm" type="CONTINUOUS" datatype="INT" units="Value" enabled="false"/>
+    <Probe name="Voltage_ph_B" type="CONTINUOUS" datatype="INT" units="Value" enabled="true"/>
+    <Probe name="Temperature" type="CONTINUOUS" datatype="INT" units="Value" enabled="true"/>
 
 </xSCOPEconfig>

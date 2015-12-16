@@ -29,7 +29,7 @@ void set_commutation_offset_cclk(chanend c_signal, unsigned offset){
 }
 
 
-void run_offset_tuning(int input_voltage, chanend c_commutation_p1, chanend c_commutation_p2, client interface AMS ?i_ams, chanend ?c_hall_){
+void run_offset_tuning(int input_voltage, chanend c_commutation_p2, client interface AMS ?i_ams, chanend ?c_hall_){
     int absolute_position_singleturn = 0;
     unsigned angle_electrical = 0;
     delay_seconds(1);
@@ -52,8 +52,6 @@ void run_offset_tuning(int input_voltage, chanend c_commutation_p1, chanend c_co
     if(!isnull(c_hall_)){
         angle_electrical = get_hall_pinstate(c_hall_);
     }
-
-    set_commutation_sinusoidal(c_commutation_p1, input_voltage);
 
     printf (" Please enter an offset value different from %d, then press enter\n",
             (input_voltage > 0) ? ((WINDING_TYPE == 1) ? COMMUTATION_OFFSET_CLK : COMMUTATION_OFFSET_CCLK) : ((WINDING_TYPE == 1) ? COMMUTATION_OFFSET_CCLK : COMMUTATION_OFFSET_CLK)  );
@@ -84,4 +82,14 @@ void run_offset_tuning(int input_voltage, chanend c_commutation_p1, chanend c_co
         delay_milliseconds(10);
     }
 
+}
+
+void perform_ramp(int input_voltage, chanend c_commutation){
+    int sign = 1;
+    if (input_voltage < 0) sign = -1;
+
+    for (int ramp = 0; ramp < abs(input_voltage); ramp++){
+        set_commutation_sinusoidal(c_commutation, ramp * sign);
+        delay_milliseconds(1);
+    }
 }
