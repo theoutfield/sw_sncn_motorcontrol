@@ -45,7 +45,7 @@
 #define COMMUTATION_OFFSET_CCLK     2460//2731
 
 /* Motor Winding type (STAR_WINDING/DELTA_WINDING) */
-#define WINDING_TYPE                DELTA_WINDING
+#define WINDING_TYPE                STAR_WINDING
 
 /* Changes direction of the motor drive  (1 /-1) */
 #define POLARITY                    1
