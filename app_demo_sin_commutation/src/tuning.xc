@@ -44,30 +44,58 @@ void run_offset_tuning(int input_voltage, chanend c_commutation_p1, client inter
     set_commutation_sensor(c_commutation_p1, sensor_select);
     set_commutation_sinusoidal(c_commutation_p1, input_voltage);
     //prompt tuning
-    if (sensor_select == HALL)
+    if (sensor_select == HALL) {
         printf ("Hall tuning. Voltage %d\nPlease enter an offset value different from %d, then press enter\n", input_voltage,
             (input_voltage > 0) ? ((WINDING_TYPE == 1) ? COMMUTATION_OFFSET_CLK : COMMUTATION_OFFSET_CCLK) : ((WINDING_TYPE == 1) ? COMMUTATION_OFFSET_CCLK : COMMUTATION_OFFSET_CLK)  );
-    else if (sensor_select == BISS) {
+    } else if (sensor_select == BISS) {
         init_biss_param(biss_params);
-        printf ("BiSS tuning. Voltage %d\nPlease enter an offset value different from %d, then press enter\n", input_voltage, BISS_OFFSET_ELECTRICAL );
+        printf ("BiSS tuning. Voltage %d\nPlease enter an offset value different from %d, then press enter\n", input_voltage,  BISS_OFFSET_ELECTRICAL);
     }
     fflush(stdout);
     //read and adjust the offset
+    char mode = 0;
     while (1) {
         char c;
-        unsigned value = 0;
+        int value = 0;
+        int sign = 1;
         //reading user input. Only positive integers are accepted
         while((c = getchar ()) != '\n'){
             if(isdigit(c)>0){
                 value *= 10;
                 value += c - '0';
-            }
+            } else if (c == '-') {
+                sign = -1;
+            } else
+                mode = c;
         }
-        printf("setting %i\n", value);
         //please note for the delta winding type offset_clk and offset_cclk are flipped
         if (sensor_select == BISS) {
-            biss_params.offset_electrical = value;
-            i_biss.set_params(biss_params);
+            switch(mode) {
+            case 'a':
+                //auto
+                set_commutation_sinusoidal(c_commutation_p1, 0);
+                delay_milliseconds(500);
+                i_biss.set_calib(1);
+                set_commutation_sinusoidal(c_commutation_p1, -500);
+                delay_milliseconds(1000);
+                unsigned int offset = i_biss.set_angle_electrical(0);
+                i_biss.set_calib(0);
+                set_commutation_sinusoidal(c_commutation_p1, input_voltage);
+                mode = 0;
+                printf("auto offset: %d\n", offset);
+                break;
+            case 'v':
+                value *= sign;
+                printf("voltage: %i\n", value);
+                set_commutation_sinusoidal(c_commutation_p1, value);
+                mode = 0;
+                break;
+            default:
+                printf("offset: %i\n", value);
+                biss_params.offset_electrical = value;
+                i_biss.set_params(biss_params);
+                break;
+            }
         } else {
             if (input_voltage > 0)
             {        //star winding
