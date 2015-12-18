@@ -26,7 +26,6 @@
 on tile[IFM_TILE]:clock clk_adc = XS1_CLKBLK_1;
 on tile[IFM_TILE]:clock clk_pwm = XS1_CLKBLK_REF;
 on tile[IFM_TILE]:clock clk_biss = XS1_CLKBLK_2 ;
-port out p_ifm_biss_clk = GPIO_D0;
 
 #define VOLTAGE 1000 //+/- 4095
 
@@ -209,7 +208,7 @@ int main(void) {
                     hall_par hall_params;
                     #ifdef DC1K
                     //connector 1
-                    p_ifm_encoder_hall_select_ext_d4to5 <: SET_PORT1_AS_QEI_PORT2_AS_HALL;
+//                    p_ifm_encoder_hall_select_ext_d4to5 <: SET_PORT1_AS_QEI_PORT2_AS_HALL;
                     #endif
                     run_hall(c_hall_p1, c_hall_p2, c_hall_p3, c_hall_p4, c_hall_p5, c_hall_p6,
                             p_ifm_hall, hall_params); // channel priority 1,2..6
@@ -219,7 +218,7 @@ int main(void) {
                 /* biss server */
                 {
                     biss_par biss_params;
-                    run_biss(i_biss, 3, p_ifm_biss_clk, p_ifm_encoder, clk_biss, biss_params, BISS_FRAME_BYTES);
+                    run_biss(i_biss, 3, p_ifm_encoder_hall_select_ext_d4to5, p_ifm_encoder, clk_biss, biss_params, BISS_FRAME_BYTES);
                 }
 
                 /*Current sampling*/
