@@ -18,6 +18,7 @@
 
 
 #include <foc_base.h>
+//#include <torque_control.h>
 
 #ifdef AD7265
 #include <adc_7265.h>
@@ -30,7 +31,33 @@ on tile[IFM_TILE]:clock clk_adc = XS1_CLKBLK_1;
 on tile[IFM_TILE]:clock clk_pwm = XS1_CLKBLK_REF;
 on tile[IFM_TILE]:clock clk_biss = XS1_CLKBLK_2 ;
 
-#define VOLTAGE 500 //+/- 4095
+#define TORQUE 1000 //+/- 4095
+#define Q_MAX 3000
+
+
+void simple_torque_controller(client interface foc_base i_foc_base){
+    delay_seconds(5);
+    int torque_actual = 0, error = 0, setpoint = 0, feedforward = 200;
+    while(1){
+        error = TORQUE - i_foc_base.get_torque_actual();
+        if (error > 0) setpoint++;
+        else setpoint--;
+
+        if (setpoint > Q_MAX) setpoint = Q_MAX;
+        if (setpoint < -Q_MAX) setpoint = -Q_MAX;
+
+        if((setpoint > 0)  && (setpoint < 50)) setpoint = 50;
+        else if ((setpoint < 0)  && (setpoint > -50)) setpoint = -50;
+
+        if (setpoint < feedforward) setpoint = feedforward;
+
+        xscope_int(DEBUG_VALUE, setpoint);
+        xscope_int(CONTROL_ERROR, error);
+
+        i_foc_base.set_q(setpoint);
+        delay_milliseconds(1);
+    }
+}
 
 
 int main(void) {
@@ -42,11 +69,15 @@ int main(void) {
 
     chan c_adc;
 
+    interface foc_base i_foc_base;
+
+
     par
     {
 
         on tile[APP_TILE]:
         {
+ //           i_foc_base.set_q(TORQUE);
 
         }
 
@@ -54,6 +85,9 @@ int main(void) {
         {
             par
             {
+                simple_torque_controller(i_foc_base);
+
+
                 /* ADC Loop */
                 adc_ad7949_triggered(c_adc, c_adctrig, clk_adc,\
                         p_ifm_adc_sclk_conv_mosib_mosia, p_ifm_adc_misoa,\
@@ -76,7 +110,7 @@ int main(void) {
                     hall_par hall_params;
                     init_hall_param(hall_params);
 
-                    FOC_base( VOLTAGE, s_pwm_control,         p_ifm_coastn,   p_ifm_esf_rstn_pwml_pwmh, p_ifm_ff1, p_ifm_ff2,
+                    FOC_base( i_foc_base, s_pwm_control,         p_ifm_coastn,   p_ifm_esf_rstn_pwml_pwmh, p_ifm_ff1, p_ifm_ff2,
                             c_pwm_ctrl,          c_adc,          c_hall_p1,  c_watchdog);
 
                 }
