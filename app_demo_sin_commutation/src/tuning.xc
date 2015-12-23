@@ -33,6 +33,16 @@ void run_offset_tuning(int input_voltage, chanend c_commutation_p2, client inter
     int absolute_position_singleturn = 0;
     unsigned angle_electrical = 0;
     delay_seconds(1);
+
+    if(!isnull(i_ams)){
+        printf("setting to zero\n");
+        set_to_zero_angle(c_commutation_p2, 200);
+        printf("done\n");
+        while(1){
+            printf("%i\n", i_ams.get_absolute_position_singleturn());
+        }
+    }
+
 //    if(!isnull(i_ams)){
 //        set_to_zero_angle(c_commutation_p1, 200);
 //        delay_seconds(3);
@@ -90,6 +100,6 @@ void perform_ramp(int input_voltage, chanend c_commutation){
 
     for (int ramp = 0; ramp < abs(input_voltage); ramp++){
         set_commutation_sinusoidal(c_commutation, ramp * sign);
-        delay_milliseconds(1);
+        delay_milliseconds(3);
     }
 }

@@ -1,5 +1,5 @@
 /* PLEASE REPLACE "CORE_BOARD_REQUIRED" AND "IFM_BOARD_REQUIRED" WITH AN APPROPRIATE BOARD SUPPORT FILE FROM module_board-support */
-#include <CORE_C21-rev-a.inc>
+#include <CORE_C22-rev-a.inc>
 #include <IFM_DC1K-rev-c2.inc>
 
 
@@ -20,7 +20,7 @@
 on tile[IFM_TILE]:clock clk_adc = XS1_CLKBLK_1;
 on tile[IFM_TILE]:clock clk_pwm = XS1_CLKBLK_REF;
 
-#define NUM_OF_AMS_INTERFACES 2
+#define NUM_OF_AMS_INTERFACES 3
 
 on tile[IFM_TILE]: sensor_spi_interface p_rotary_sensor =
 {
@@ -35,7 +35,7 @@ on tile[IFM_TILE]: sensor_spi_interface p_rotary_sensor =
         GPIO_D0 //D0         //slave select
 };
 
-#define VOLTAGE 1200 //+/- 4095
+#define VOLTAGE 500 //+/- 4095
 
 #ifdef AD7265
 on tile[IFM_TILE]: adc_ports_t adc_ports =
@@ -51,11 +51,11 @@ void sample_data(client interface ADC i_adc, client interface AMS ?i_ams){
     int sampling_time, phaseB = 0, phaseC = 0, voltage_ph_A = 0, voltage_ph_B = 0, voltage_ph_C = 0, temperature = 0, dummy1, dummy2;
     while(1){
         {phaseB, phaseC, sampling_time} = i_adc.get_adc_measurements(1, 1);//port_id, config
-        {dummy1, dummy2, sampling_time} = i_adc.get_adc_measurements(2, 1);//port_id, config
-        {dummy1, dummy2, sampling_time} = i_adc.get_adc_measurements(3, 1);//port_id, config
-        {dummy1, dummy2, sampling_time} = i_adc.get_adc_measurements(4, 1);//port_id, config
+    //    {dummy1, dummy2, sampling_time} = i_adc.get_adc_measurements(2, 1);//port_id, config
+    //    {dummy1, dummy2, sampling_time} = i_adc.get_adc_measurements(3, 1);//port_id, config
+   //     {dummy1, dummy2, sampling_time} = i_adc.get_adc_measurements(4, 1);//port_id, config
         {temperature, voltage_ph_B, sampling_time} = i_adc.get_adc_measurements(5, 1);//port_id, config
-        {voltage_ph_A, voltage_ph_C, sampling_time} = i_adc.get_adc_measurements(6, 1);//port_id, config
+    //    {voltage_ph_A, voltage_ph_C, sampling_time} = i_adc.get_adc_measurements(6, 1);//port_id, config
         xscope_int(PHASE_B, phaseB - 2048);
         xscope_int(PHASE_C, phaseC - 2048);
         xscope_int(VOLTAGE_PH_B, voltage_ph_C * 68 / 4096.0);
